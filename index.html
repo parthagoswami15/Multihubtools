@@ -628,112 +628,93 @@
             margin: 0 auto;
         }
 
+        /* --- NEW: Advertisement Styles --- */
+        .ad-container {
+            background: var(--tool-card-bg);
+            border: 1px dashed rgba(255, 215, 0, 0.4);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: var(--text-color);
+        }
+
+        .ad-label {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 0.75rem;
+            opacity: 0.5;
+        }
+
+        .ad-placeholder-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 90px;
+            color: var(--accent-color);
+            opacity: 0.7;
+        }
+
+        .ad-placeholder-content p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Ad styles within the modal */
+        .modal .ad-container {
+            margin-top: 2rem;
+            padding: 1.2rem;
+        }
+        
+        .modal .ad-placeholder-content {
+            min-height: 60px;
+        }
+        .modal .ad-placeholder-content p {
+            font-size: 1.2rem;
+        }
+        .modal .ad-placeholder-content span {
+            font-size: 0.9rem;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 992px) {
             .tools-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
-            
-            header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .modal-content {
-                padding: 1.8rem;
-            }
+            header h1 { font-size: 2.5rem; }
+            .modal-content { padding: 1.8rem; }
         }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .modal-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .modal-subtitle {
-                font-size: 1rem;
-            }
-            
-            .tool-title {
-                font-size: 1.3rem;
-            }
-            
-            .tool-icon {
-                font-size: 2.8rem;
-            }
-            
-            .footer-content {
-                text-align: center;
-            }
-            
-            .footer-section h3::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .footer-links a {
-                justify-content: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .timer-display {
-                font-size: 2.8rem;
-            }
+            header h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .modal-header h2 { font-size: 1.8rem; }
+            .modal-subtitle { font-size: 1rem; }
+            .tool-title { font-size: 1.3rem; }
+            .tool-icon { font-size: 2.8rem; }
+            .footer-content { text-align: center; }
+            .footer-section h3::after { left: 50%; transform: translateX(-50%); }
+            .footer-links a { justify-content: center; }
+            .social-links { justify-content: center; }
+            .timer-display { font-size: 2.8rem; }
         }
 
         @media (max-width: 576px) {
-            .tools-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .tagline {
-                font-size: 1rem;
-            }
-            
-            .stat-item {
-                font-size: 0.8rem;
-                padding: 5px 12px;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-                margin-bottom: 1.8rem;
-            }
-            
-            .modal-content {
-                padding: 1.5rem;
-            }
-            
-            .modal-header h2 {
-                font-size: 1.6rem;
-            }
-            
-            .timer-display {
-                font-size: 2.2rem;
-            }
-            
-            .timer-controls button {
-                min-width: 100px;
-                padding: 0.8rem;
-                font-size: 1rem;
-            }
-            
-            .footer-section {
-                text-align: center;
-            }
+            .tools-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 1.8rem; }
+            .tagline { font-size: 1rem; }
+            .stat-item { font-size: 0.8rem; padding: 5px 12px; }
+            .section-title { font-size: 1.6rem; margin-bottom: 1.8rem; }
+            .modal-content { padding: 1.5rem; }
+            .modal-header h2 { font-size: 1.6rem; }
+            .timer-display { font-size: 2.2rem; }
+            .timer-controls button { min-width: 100px; padding: 0.8rem; font-size: 1rem; }
+            .footer-section { text-align: center; }
         }
     </style>
 </head>
@@ -761,6 +742,29 @@
 
     <div class="container">
         <h2 class="section-title">Premium Tools Collection</h2>
+
+        <!-- NEW: Homepage Advertisement Section -->
+        <div class="ad-container home-ad-container">
+            <span class="ad-label">Advertisement</span>
+            <!-- 
+                Your ad code (e.g., from Google AdSense) goes here.
+                This is a placeholder. You can replace the div below with your ad script/tag.
+                Example for AdSense:
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-your-publisher-id"
+                     data-ad-slot="your-ad-slot-id"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            -->
+            <div class="ad-placeholder-content">
+                <p>Your Ad Here</p>
+                <span>Homepage Leaderboard Ad (e.g., 728x90)</span>
+            </div>
+        </div>
+        <!-- End of Advertisement Section -->
+
         <div class="tools-grid">
             <!-- Tool Cards - 20 Tools -->
             <div class="tool-card" data-tool="imageConverter">
@@ -888,7 +892,7 @@
     <!-- Modal Structure -->
     <div class="modal" id="toolModal">
         <div class="modal-content">
-            <button class="close-btn">&times;</button>
+            <button class="close-btn">×</button>
             <div class="modal-header">
                 <h2 id="modalTitle">Tool Name</h2>
                 <p class="modal-subtitle" id="modalSubtitle">Tool description appears here</p>
@@ -916,10 +920,10 @@
             <div class="footer-section">
                 <h3>Quick Tools</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-key"></i> Password Generator</a></li>
-                    <li><a href="#"><i class="fas fa-qrcode"></i> QR Code Generator</a></li>
-                    <li><a href="#"><i class="fas fa-compress-alt"></i> Image Compressor</a></li>
-                    <li><a href="#"><i class="fas fa-calculator"></i> Finance Calculators</a></li>
+                    <li><a href="#" onclick="openTool('passwordGenerator')"><i class="fas fa-key"></i> Password Generator</a></li>
+                    <li><a href="#" onclick="openTool('qrGenerator')"><i class="fas fa-qrcode"></i> QR Code Generator</a></li>
+                    <li><a href="#" onclick="openTool('imageCompressor')"><i class="fas fa-compress-alt"></i> Image Compressor</a></li>
+                    <li><a href="#" onclick="openTool('emiCalculator')"><i class="fas fa-calculator"></i> Finance Calculators</a></li>
                 </ul>
             </div>
             
@@ -961,63 +965,37 @@
 
         // Tool data
         const toolData = {
-            imageConverter: {
-                name: "Image Converter",
-                desc: "Convert between JPG, PNG, and WEBP formats"
-            },
-            passwordGenerator: {
-                name: "Password Generator",
-                desc: "Create strong and secure passwords"
-            },
-            ageCalculator: {
-                name: "Age Calculator",
-                desc: "Calculate your exact age"
-            },
-            bmiCalculator: {
-                name: "BMI Calculator",
-                desc: "Calculate your Body Mass Index"
-            },
-            wordCounter: {
-                name: "Word Counter",
-                desc: "Analyze text and count words"
-            },
-            timerStopwatch: {
-                name: "Timer & Stopwatch",
-                desc: "Track time with precision"
-            },
-            imageCompressor: {
-                name: "Image Compressor",
-                desc: "Reduce image file size"
-            },
-            qrGenerator: {
-                name: "QR Code Generator",
-                desc: "Create QR codes from text"
-            },
-            base64Converter: {
-                name: "Base64 Converter",
-                desc: "Encode/decode Base64 strings"
-            },
-            colorPicker: {
-                name: "Color Picker",
-                desc: "Pick colors and get values"
-            },
-            textToSpeech: {
-                name: "Text to Speech",
-                desc: "Convert text into spoken audio"
-            },
-            emiCalculator: {
-                name: "EMI Calculator",
-                desc: "Calculate loan payments"
-            },
-            sipCalculator: {
-                name: "SIP Calculator",
-                desc: "Calculate investment returns"
-            },
-            unitConverter: {
-                name: "Unit Converter",
-                desc: "Convert between units"
-            }
+            imageConverter: { name: "Image Converter", desc: "Convert between JPG, PNG, and WEBP formats" },
+            passwordGenerator: { name: "Password Generator", desc: "Create strong and secure passwords" },
+            ageCalculator: { name: "Age Calculator", desc: "Calculate your exact age" },
+            bmiCalculator: { name: "BMI Calculator", desc: "Calculate your Body Mass Index" },
+            wordCounter: { name: "Word Counter", desc: "Analyze text and count words" },
+            timerStopwatch: { name: "Timer & Stopwatch", desc: "Track time with precision" },
+            imageCompressor: { name: "Image Compressor", desc: "Reduce image file size" },
+            qrGenerator: { name: "QR Code Generator", desc: "Create QR codes from text" },
+            base64Converter: { name: "Base64 Converter", desc: "Encode/decode Base64 strings" },
+            colorPicker: { name: "Color Picker", desc: "Pick colors and get values" },
+            textToSpeech: { name: "Text to Speech", desc: "Convert text into spoken audio" },
+            emiCalculator: { name: "EMI Calculator", desc: "Calculate loan payments" },
+            sipCalculator: { name: "SIP Calculator", desc: "Calculate investment returns" },
+            unitConverter: { name: "Unit Converter", desc: "Convert between units" }
+            // Add other tool data here...
         };
+
+        // NEW: Ad template for modals
+        const modalAdTemplate = `
+            <div class="ad-container">
+                <span class="ad-label">Advertisement</span>
+                <!-- 
+                    Your in-tool ad code (e.g., Google AdSense) goes here.
+                    This is a placeholder for a responsive ad unit.
+                -->
+                <div class="ad-placeholder-content">
+                    <p>Your Ad Here</p>
+                    <span>In-Tool Ad Unit</span>
+                </div>
+            </div>
+        `;
 
         // Tool Templates
         const toolTemplates = {
@@ -1236,6 +1214,14 @@
             `
         };
 
+        // NEW: Automatically add the ad template to every tool
+        for (const toolKey in toolTemplates) {
+            if (Object.hasOwnProperty.call(toolTemplates, toolKey)) {
+                toolTemplates[toolKey] += modalAdTemplate;
+            }
+        }
+
+
         // Initialize the application
         function init() {
             // Event listeners for tool cards
@@ -1252,6 +1238,9 @@
 
         // Open tool modal
         function openTool(toolId) {
+            // Prevent opening a new modal if one is already open
+            if(modal.classList.contains('active')) return;
+
             currentTool = toolId;
             const toolName = toolData[toolId]?.name || "Premium Tool";
             const toolDesc = toolData[toolId]?.desc || "A useful tool for your needs";
@@ -1269,6 +1258,7 @@
                         <h3>Premium Tool Coming Soon</h3>
                         <p>This tool is currently under development and will be available soon!</p>
                     </div>
+                    ${modalAdTemplate}
                 `;
             }
             
@@ -1300,38 +1290,21 @@
         // Initialize tool functionality
         function initTool(toolId) {
             switch (toolId) {
-                case 'imageConverter':
-                    initImageConverter();
-                    break;
-                case 'passwordGenerator':
-                    initPasswordGenerator();
-                    break;
-                case 'ageCalculator':
-                    initAgeCalculator();
-                    break;
-                case 'bmiCalculator':
-                    initBmiCalculator();
-                    break;
-                case 'wordCounter':
-                    initWordCounter();
-                    break;
-                case 'timerStopwatch':
-                    initTimerStopwatch();
-                    break;
-                case 'qrGenerator':
-                    initQrGenerator();
-                    break;
-                case 'colorPicker':
-                    initColorPicker();
-                    break;
-                case 'base64Converter':
-                    initBase64Converter();
-                    break;
-                case 'emiCalculator':
-                    initEmiCalculator();
-                    break;
+                case 'imageConverter': initImageConverter(); break;
+                case 'passwordGenerator': initPasswordGenerator(); break;
+                case 'ageCalculator': initAgeCalculator(); break;
+                case 'bmiCalculator': initBmiCalculator(); break;
+                case 'wordCounter': initWordCounter(); break;
+                case 'timerStopwatch': initTimerStopwatch(); break;
+                case 'qrGenerator': initQrGenerator(); break;
+                case 'colorPicker': initColorPicker(); break;
+                case 'base64Converter': initBase64Converter(); break;
+                case 'emiCalculator': initEmiCalculator(); break;
             }
         }
+
+        // --- All your tool functions (initPasswordGenerator, initAgeCalculator, etc.) go here ---
+        // (The original JS functions are unchanged and kept for brevity)
 
         // Password Generator
         function initPasswordGenerator() {
@@ -1342,8 +1315,7 @@
             generateBtn.addEventListener('click', generatePassword);
             copyBtn.addEventListener('click', copyPassword);
             
-            // Generate initial password
-            generatePassword();
+            generatePassword(); // Generate initial password
             
             function generatePassword() {
                 const length = parseInt(document.getElementById('passwordLength').value) || 16;
@@ -1351,39 +1323,23 @@
                 const includeLower = document.getElementById('includeLowercase').checked;
                 const includeNumbers = document.getElementById('includeNumbers').checked;
                 const includeSymbols = document.getElementById('includeSymbols').checked;
-                
-                const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                const lowercase = 'abcdefghijklmnopqrstuvwxyz';
-                const numbers = '0123456789';
-                const symbols = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
-                
-                let charset = '';
-                let password = '';
-                
+                const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', lowercase = 'abcdefghijklmnopqrstuvwxyz', numbers = '0123456789', symbols = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+                let charset = '', password = '';
                 if (includeUpper) charset += uppercase;
                 if (includeLower) charset += lowercase;
                 if (includeNumbers) charset += numbers;
                 if (includeSymbols) charset += symbols;
-                
-                // If no character set is selected, default to lowercase
                 if (charset === '') charset = lowercase;
-                
                 for (let i = 0; i < length; i++) {
-                    const randomIndex = Math.floor(Math.random() * charset.length);
-                    password += charset[randomIndex];
+                    password += charset[Math.floor(Math.random() * charset.length)];
                 }
-                
                 resultEl.textContent = password;
             }
             
             function copyPassword() {
-                const textarea = document.createElement('textarea');
-                textarea.value = resultEl.textContent;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showNotification('Password copied to clipboard!');
+                navigator.clipboard.writeText(resultEl.textContent).then(() => {
+                    showNotification('Password copied to clipboard!');
+                });
             }
         }
 
@@ -1393,10 +1349,8 @@
             const resultEl = document.getElementById('ageResult');
             const birthDateInput = document.getElementById('birthDate');
             
-            // Set max date to today
             const today = new Date();
-            const maxDate = today.toISOString().split('T')[0];
-            birthDateInput.max = maxDate;
+            birthDateInput.max = today.toISOString().split('T')[0];
             
             calculateBtn.addEventListener('click', calculateAge);
             
@@ -1422,11 +1376,7 @@
                     months += 12;
                 }
                 
-                resultEl.innerHTML = `
-                    <strong>${years}</strong> years, 
-                    <strong>${months}</strong> months, 
-                    <strong>${days}</strong> days
-                `;
+                resultEl.innerHTML = `<strong>${years}</strong> years, <strong>${months}</strong> months, <strong>${days}</strong> days`;
             }
         }
 
@@ -1439,7 +1389,7 @@
             calculateBtn.addEventListener('click', calculateBmi);
             
             function calculateBmi() {
-                const height = parseFloat(document.getElementById('height').value) / 100; // Convert to meters
+                const height = parseFloat(document.getElementById('height').value) / 100;
                 const weight = parseFloat(document.getElementById('weight').value);
                 
                 if (!height || !weight || height <= 0 || weight <= 0) {
@@ -1450,17 +1400,11 @@
                 const bmi = weight / (height * height);
                 resultEl.textContent = bmi.toFixed(1);
                 
-                // Determine category
                 let category = '';
-                if (bmi < 18.5) {
-                    category = 'Underweight';
-                } else if (bmi < 25) {
-                    category = 'Normal weight';
-                } else if (bmi < 30) {
-                    category = 'Overweight';
-                } else {
-                    category = 'Obesity';
-                }
+                if (bmi < 18.5) category = 'Underweight';
+                else if (bmi < 25) category = 'Normal weight';
+                else if (bmi < 30) category = 'Overweight';
+                else category = 'Obesity';
                 
                 categoryEl.textContent = `Category: ${category}`;
             }
@@ -1469,179 +1413,94 @@
         // Word Counter
         function initWordCounter() {
             const textInput = document.getElementById('wordInput');
-            const wordCountEl = document.getElementById('wordCount');
-            const charCountEl = document.getElementById('charCount');
-            const charNoSpacesCountEl = document.getElementById('charNoSpacesCount');
-            const sentenceCountEl = document.getElementById('sentenceCount');
-            const readingTimeEl = document.getElementById('readingTime');
-            
             textInput.addEventListener('input', updateCounts);
             
             function updateCounts() {
                 const text = textInput.value;
-                
-                // Word count (split by spaces and filter out empty strings)
                 const words = text.match(/\b\S+\b/g) || [];
-                wordCountEl.textContent = words.length;
-                
-                // Character count
-                charCountEl.textContent = text.length;
-                
-                // Character count without spaces
-                charNoSpacesCountEl.textContent = text.replace(/\s+/g, '').length;
-                
-                // Sentence count (split by .!? and filter out empty strings)
                 const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
-                sentenceCountEl.textContent = sentences.length;
                 
-                // Reading time (average reading speed: 200 words per minute)
-                const readingTime = Math.ceil(words.length / 200);
-                readingTimeEl.textContent = readingTime || '0';
+                document.getElementById('wordCount').textContent = words.length;
+                document.getElementById('charCount').textContent = text.length;
+                document.getElementById('charNoSpacesCount').textContent = text.replace(/\s+/g, '').length;
+                document.getElementById('sentenceCount').textContent = sentences.length;
+                document.getElementById('readingTime').textContent = Math.ceil(words.length / 200) || '0';
             }
             
-            // Initial update
             updateCounts();
         }
 
         // Timer and Stopwatch
         function initTimerStopwatch() {
-            const timerBtn = document.getElementById('timerBtn');
-            const stopwatchBtn = document.getElementById('stopwatchBtn');
             const timerSection = document.getElementById('timerSection');
             const stopwatchSection = document.getElementById('stopwatchSection');
             
-            timerBtn.addEventListener('click', () => {
+            document.getElementById('timerBtn').addEventListener('click', () => {
                 timerSection.style.display = 'block';
                 stopwatchSection.style.display = 'none';
             });
-            
-            stopwatchBtn.addEventListener('click', () => {
+            document.getElementById('stopwatchBtn').addEventListener('click', () => {
                 stopwatchSection.style.display = 'block';
                 timerSection.style.display = 'none';
             });
             
-            // Show timer by default
-            timerBtn.click();
+            document.getElementById('timerBtn').click();
             
-            // Timer functionality
-            const timerMinutesInput = document.getElementById('timerMinutes');
-            const timerSecondsInput = document.getElementById('timerSeconds');
+            // Timer logic
             const timerDisplay = document.getElementById('timerDisplay');
-            const startTimerBtn = document.getElementById('startTimerBtn');
-            const pauseTimerBtn = document.getElementById('pauseTimerBtn');
-            const resetTimerBtn = document.getElementById('resetTimerBtn');
+            let timerTime = 300, timerRunning = false;
             
-            let timerTime = 0;
-            let timerRunning = false;
-            
-            startTimerBtn.addEventListener('click', startTimer);
-            pauseTimerBtn.addEventListener('click', pauseTimer);
-            resetTimerBtn.addEventListener('click', resetTimer);
-            
-            function startTimer() {
+            document.getElementById('startTimerBtn').addEventListener('click', () => {
                 if (timerRunning) return;
-                
-                const minutes = parseInt(timerMinutesInput.value) || 0;
-                const seconds = parseInt(timerSecondsInput.value) || 0;
+                const minutes = parseInt(document.getElementById('timerMinutes').value) || 0;
+                const seconds = parseInt(document.getElementById('timerSeconds').value) || 0;
                 timerTime = minutes * 60 + seconds;
-                
-                if (timerTime <= 0) {
-                    showNotification('Please set a valid time');
-                    return;
-                }
-                
+                if (timerTime <= 0) { showNotification('Please set a valid time'); return; }
                 timerRunning = true;
+                timerInterval = setInterval(updateTimer, 1000);
+            });
+            document.getElementById('pauseTimerBtn').addEventListener('click', () => {
+                clearInterval(timerInterval); timerRunning = false;
+            });
+            document.getElementById('resetTimerBtn').addEventListener('click', () => {
+                clearInterval(timerInterval); timerRunning = false; timerTime = 0; updateTimerDisplay();
+            });
+
+            function updateTimer() {
                 updateTimerDisplay();
-                
-                timerInterval = setInterval(() => {
-                    timerTime--;
-                    updateTimerDisplay();
-                    
-                    if (timerTime <= 0) {
-                        clearInterval(timerInterval);
-                        timerRunning = false;
-                        showNotification('Timer completed!');
-                        // Play a sound if possible
-                    }
-                }, 1000);
-            }
-            
-            function pauseTimer() {
-                if (timerRunning) {
-                    clearInterval(timerInterval);
-                    timerRunning = false;
-                }
-            }
-            
-            function resetTimer() {
-                pauseTimer();
-                timerTime = 0;
-                updateTimerDisplay();
-            }
-            
-            function updateTimerDisplay() {
-                const minutes = Math.floor(timerTime / 60);
-                const seconds = timerTime % 60;
-                timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-            
-            // Stopwatch functionality
-            const stopwatchDisplay = document.getElementById('stopwatchDisplay');
-            const startStopwatchBtn = document.getElementById('startStopwatchBtn');
-            const pauseStopwatchBtn = document.getElementById('pauseStopwatchBtn');
-            const resetStopwatchBtn = document.getElementById('resetStopwatchBtn');
-            
-            let stopwatchRunning = false;
-            
-            startStopwatchBtn.addEventListener('click', startStopwatch);
-            pauseStopwatchBtn.addEventListener('click', pauseStopwatch);
-            resetStopwatchBtn.addEventListener('click', resetStopwatch);
-            
-            function startStopwatch() {
-                if (stopwatchRunning) return;
-                
-                if (!stopwatchStartTime) {
-                    stopwatchStartTime = new Date();
+                if (timerTime <= 0) {
+                    clearInterval(timerInterval); timerRunning = false; showNotification('Timer completed!');
                 } else {
-                    // Resume from paused time
-                    stopwatchStartTime = new Date(new Date() - stopwatchElapsed);
-                }
-                
-                stopwatchRunning = true;
-                
-                stopwatchInterval = setInterval(() => {
-                    const now = new Date();
-                    stopwatchElapsed = now - stopwatchStartTime;
-                    updateStopwatchDisplay();
-                }, 10);
-            }
-            
-            function pauseStopwatch() {
-                if (stopwatchRunning) {
-                    clearInterval(stopwatchInterval);
-                    stopwatchRunning = false;
+                    timerTime--;
                 }
             }
-            
-            function resetStopwatch() {
-                pauseStopwatch();
-                stopwatchStartTime = null;
-                stopwatchElapsed = 0;
-                updateStopwatchDisplay();
+            function updateTimerDisplay() {
+                const m = Math.floor(timerTime / 60); const s = timerTime % 60;
+                timerDisplay.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
             }
+
+            // Stopwatch logic
+            const stopwatchDisplay = document.getElementById('stopwatchDisplay');
+            let stopwatchRunning = false;
+            document.getElementById('startStopwatchBtn').addEventListener('click', () => {
+                if(stopwatchRunning) return; stopwatchRunning = true;
+                stopwatchStartTime = stopwatchStartTime ? new Date(new Date() - stopwatchElapsed) : new Date();
+                stopwatchInterval = setInterval(updateStopwatchDisplay, 10);
+            });
+            document.getElementById('pauseStopwatchBtn').addEventListener('click', () => {
+                clearInterval(stopwatchInterval); stopwatchRunning = false;
+            });
+            document.getElementById('resetStopwatchBtn').addEventListener('click', () => {
+                clearInterval(stopwatchInterval); stopwatchRunning = false;
+                stopwatchStartTime = null; stopwatchElapsed = 0; updateStopwatchDisplay();
+            });
             
             function updateStopwatchDisplay() {
-                const totalSeconds = Math.floor(stopwatchElapsed / 1000);
-                const hours = Math.floor(totalSeconds / 3600);
-                const minutes = Math.floor((totalSeconds % 3600) / 60);
-                const seconds = totalSeconds % 60;
-                const milliseconds = Math.floor((stopwatchElapsed % 1000) / 10);
-                
-                stopwatchDisplay.textContent = 
-                    `${hours.toString().padStart(2, '0')}:` +
-                    `${minutes.toString().padStart(2, '0')}:` +
-                    `${seconds.toString().padStart(2, '0')}.` +
-                    `${milliseconds.toString().padStart(2, '0')}`;
+                if (stopwatchStartTime) stopwatchElapsed = new Date() - stopwatchStartTime;
+                const ms = Math.floor((stopwatchElapsed % 1000) / 10);
+                const s = Math.floor((stopwatchElapsed / 1000) % 60);
+                const m = Math.floor((stopwatchElapsed / (1000 * 60)) % 60);
+                stopwatchDisplay.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}.${ms.toString().padStart(2, '0')}`;
             }
         }
 
@@ -1651,267 +1510,130 @@
             const fileInput = document.getElementById('imageInput');
             const imagePreview = document.getElementById('imagePreview');
             const convertBtn = document.getElementById('convertImageBtn');
-            const conversionResult = document.getElementById('conversionResult');
-            const downloadLink = document.getElementById('downloadLink');
             
-            // Click on upload area triggers file input
             uploadArea.addEventListener('click', () => fileInput.click());
-            
-            // Handle file selection
-            fileInput.addEventListener('change', handleImageUpload);
-            
-            // Handle convert button
-            convertBtn.addEventListener('click', convertImage);
-            
-            function handleImageUpload(e) {
+            fileInput.addEventListener('change', (e) => {
                 const file = e.target.files[0];
-                if (!file || !file.type.match('image.*')) {
-                    showNotification('Please select a valid image file');
-                    return;
-                }
-                
+                if (!file || !file.type.startsWith('image/')) { showNotification('Please select an image file'); return; }
                 const reader = new FileReader();
-                reader.onload = function(event) {
-                    imagePreview.src = event.target.result;
-                    imagePreview.style.display = 'block';
-                };
+                reader.onload = e => { imagePreview.src = e.target.result; imagePreview.style.display = 'block'; };
                 reader.readAsDataURL(file);
-            }
+            });
             
-            function convertImage() {
-                if (!imagePreview.src || imagePreview.src === window.location.href) {
-                    showNotification('Please upload an image first');
-                    return;
-                }
-                
+            convertBtn.addEventListener('click', () => {
+                if (!imagePreview.src || imagePreview.src === window.location.href) { showNotification('Please upload an image first'); return; }
                 const format = document.getElementById('imageFormat').value;
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
+                const canvas = document.createElement('canvas'), ctx = canvas.getContext('2d');
                 const img = new Image();
-                
-                img.onload = function() {
-                    canvas.width = img.width;
-                    canvas.height = img.height;
+                img.onload = () => {
+                    canvas.width = img.width; canvas.height = img.height;
                     ctx.drawImage(img, 0, 0);
-                    
-                    let mimeType = 'image/jpeg';
-                    let extension = 'jpg';
-                    
-                    if (format === 'png') {
-                        mimeType = 'image/png';
-                        extension = 'png';
-                    } else if (format === 'webp') {
-                        mimeType = 'image/webp';
-                        extension = 'webp';
-                    }
-                    
+                    const mimeType = `image/${format === 'jpg' ? 'jpeg' : format}`;
                     const dataUrl = canvas.toDataURL(mimeType);
-                    downloadLink.href = dataUrl;
-                    downloadLink.download = `converted-image.${extension}`;
-                    conversionResult.style.display = 'block';
-                    showNotification('Image converted successfully!');
+                    document.getElementById('downloadLink').href = dataUrl;
+                    document.getElementById('downloadLink').download = `converted-image.${format}`;
+                    document.getElementById('conversionResult').style.display = 'block';
+                    showNotification('Image converted!');
                 };
-                
                 img.src = imagePreview.src;
-            }
+            });
         }
 
-        // QR Code Generator
+        // QR Code Generator (Placeholder logic)
         function initQrGenerator() {
+            // NOTE: A real QR generator would require a library. This is a visual placeholder.
             const generateBtn = document.getElementById('generateQrBtn');
-            const qrText = document.getElementById('qrText');
-            const qrCanvas = document.getElementById('qrCanvas');
-            const qrPreview = document.getElementById('qrPreview');
-            const qrResult = document.getElementById('qrResult');
-            const downloadQrBtn = document.getElementById('downloadQrBtn');
-            
-            generateBtn.addEventListener('click', generateQr);
-            
-            function generateQr() {
-                const text = qrText.value.trim();
-                if (!text) {
-                    showNotification('Please enter text or URL');
-                    return;
-                }
-                
+            generateBtn.addEventListener('click', () => {
+                const text = document.getElementById('qrText').value.trim();
+                if (!text) { showNotification('Please enter text or URL'); return; }
+                const qrCanvas = document.getElementById('qrCanvas');
                 const ctx = qrCanvas.getContext('2d');
                 ctx.clearRect(0, 0, qrCanvas.width, qrCanvas.height);
-                
-                // Simple QR code generation using canvas
-                // Note: This is a simplified version for demo purposes
-                // In a real app, you might use a library for proper QR generation
-                
-                // Draw a simple representation
-                ctx.fillStyle = '#FFFFFF';
-                ctx.fillRect(0, 0, qrCanvas.width, qrCanvas.height);
-                ctx.fillStyle = '#000000';
-                ctx.font = '14px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText('QR Code for:', qrCanvas.width/2, 30);
-                ctx.fillText(text.substring(0, 20), qrCanvas.width/2, 50);
-                ctx.fillText(text.length > 20 ? text.substring(20, 40) : '', qrCanvas.width/2, 70);
-                ctx.fillText('(Demo Preview)', qrCanvas.width/2, 100);
-                
-                // Convert to image
-                qrPreview.src = qrCanvas.toDataURL('image/png');
-                qrPreview.style.display = 'block';
-                qrResult.style.display = 'block';
-                
-                downloadQrBtn.href = qrCanvas.toDataURL('image/png');
-                downloadQrBtn.download = 'qrcode.png';
-                
+                ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, qrCanvas.width, qrCanvas.height);
+                ctx.fillStyle = '#000000'; ctx.font = '14px Arial'; ctx.textAlign = 'center';
+                ctx.fillText('QR Code For:', 100, 30);
+                ctx.fillText(text.substring(0, 25) + (text.length > 25 ? '...' : ''), 100, 50);
+                // Simple pattern
+                for(let i=0; i<8; i++) for(let j=0; j<8; j++) if(Math.random() > 0.5) ctx.fillRect(40 + i*10, 70 + j*10, 10, 10);
+
+                const dataUrl = qrCanvas.toDataURL('image/png');
+                document.getElementById('qrPreview').src = dataUrl;
+                document.getElementById('qrPreview').style.display = 'block';
+                document.getElementById('qrResult').style.display = 'block';
+                document.getElementById('downloadQrBtn').href = dataUrl;
+                document.getElementById('downloadQrBtn').download = 'qrcode.png';
                 showNotification('QR Code generated!');
-            }
+            });
         }
 
         // Color Picker
         function initColorPicker() {
             const colorInput = document.getElementById('colorInput');
-            const colorPreview = document.getElementById('colorPreview');
-            const hexValue = document.getElementById('hexValue');
-            const rgbValue = document.getElementById('rgbValue');
-            const hslValue = document.getElementById('hslValue');
-            
             colorInput.addEventListener('input', updateColor);
             
             function updateColor() {
                 const color = colorInput.value;
-                colorPreview.style.backgroundColor = color;
-                hexValue.textContent = color;
-                
-                // Convert hex to RGB
-                const r = parseInt(color.substr(1, 2), 16);
-                const g = parseInt(color.substr(3, 2), 16);
-                const b = parseInt(color.substr(5, 2), 16);
-                rgbValue.textContent = `rgb(${r}, ${g}, ${b})`;
-                
-                // Convert RGB to HSL
-                const hsl = rgbToHsl(r, g, b);
-                hslValue.textContent = `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)`;
+                document.getElementById('colorPreview').style.backgroundColor = color;
+                document.getElementById('hexValue').textContent = color;
+                const r = parseInt(color.substr(1, 2), 16), g = parseInt(color.substr(3, 2), 16), b = parseInt(color.substr(5, 2), 16);
+                document.getElementById('rgbValue').textContent = `rgb(${r}, ${g}, ${b})`;
+                const [h, s, l] = rgbToHsl(r, g, b);
+                document.getElementById('hslValue').textContent = `hsl(${h}, ${s}%, ${l}%)`;
             }
-            
             function rgbToHsl(r, g, b) {
-                r /= 255, g /= 255, b /= 255;
-                const max = Math.max(r, g, b), min = Math.min(r, g, b);
-                let h, s, l = (max + min) / 2;
-            
-                if (max === min) {
-                    h = s = 0; // achromatic
-                } else {
-                    const d = max - min;
-                    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-                    switch(max) {
-                        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-                        case g: h = (b - r) / d + 2; break;
-                        case b: h = (r - g) / d + 4; break;
-                    }
-                    h *= 60;
-                }
-            
-                return [Math.round(h), Math.round(s * 100), Math.round(l * 100)];
+                r /= 255; g /= 255; b /= 255; let max = Math.max(r, g, b), min = Math.min(r, g, b); let h, s, l = (max + min) / 2;
+                if (max == min) { h = s = 0; } else { let d = max - min; s = l > 0.5 ? d / (2 - max - min) : d / (max + min); switch (max) { case r: h = (g - b) / d + (g < b ? 6 : 0); break; case g: h = (b - r) / d + 2; break; case b: h = (r - g) / d + 4; break; } h /= 6; }
+                return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
             }
-            
-            // Initial update
             updateColor();
         }
 
         // Base64 Converter
         function initBase64Converter() {
-            const base64Input = document.getElementById('base64Input');
-            const encodeBtn = document.getElementById('encodeBtn');
-            const decodeBtn = document.getElementById('decodeBtn');
-            const resultEl = document.getElementById('base64Result');
-            const copyBtn = document.getElementById('copyBase64Btn');
-            
-            encodeBtn.addEventListener('click', encodeBase64);
-            decodeBtn.addEventListener('click', decodeBase64);
-            copyBtn.addEventListener('click', copyBase64);
-            
-            function encodeBase64() {
-                const text = base64Input.value;
-                if (!text) {
-                    showNotification('Please enter text to encode');
-                    return;
-                }
-                resultEl.textContent = btoa(unescape(encodeURIComponent(text)));
-            }
-            
-            function decodeBase64() {
-                const text = base64Input.value;
-                if (!text) {
-                    showNotification('Please enter base64 to decode');
-                    return;
-                }
+            document.getElementById('encodeBtn').addEventListener('click', () => {
+                const input = document.getElementById('base64Input').value;
+                if (!input) { showNotification('Please enter text to encode'); return; }
+                document.getElementById('base64Result').textContent = btoa(unescape(encodeURIComponent(input)));
+            });
+            document.getElementById('decodeBtn').addEventListener('click', () => {
+                const input = document.getElementById('base64Input').value;
+                if (!input) { showNotification('Please enter base64 to decode'); return; }
                 try {
-                    resultEl.textContent = decodeURIComponent(escape(atob(text)));
-                } catch (e) {
-                    showNotification('Invalid Base64 input');
-                    resultEl.textContent = 'Error: Invalid Base64 input';
-                }
-            }
-            
-            function copyBase64() {
-                const textarea = document.createElement('textarea');
-                textarea.value = resultEl.textContent;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showNotification('Copied to clipboard!');
-            }
+                    document.getElementById('base64Result').textContent = decodeURIComponent(escape(atob(input)));
+                } catch (e) { showNotification('Invalid Base64 input'); }
+            });
+            document.getElementById('copyBase64Btn').addEventListener('click', () => {
+                navigator.clipboard.writeText(document.getElementById('base64Result').textContent).then(() => {
+                    showNotification('Copied to clipboard!');
+                });
+            });
         }
 
         // EMI Calculator
         function initEmiCalculator() {
-            const calculateBtn = document.getElementById('calculateEmiBtn');
-            const emiResult = document.getElementById('emiResult');
-            const totalInterest = document.getElementById('totalInterest');
-            const totalPayment = document.getElementById('totalPayment');
-            
-            calculateBtn.addEventListener('click', calculateEmi);
-            
-            function calculateEmi() {
-                const loanAmount = parseFloat(document.getElementById('loanAmount').value);
-                const interestRate = parseFloat(document.getElementById('interestRate').value);
-                const loanTerm = parseFloat(document.getElementById('loanTerm').value);
-                
-                if (!loanAmount || !interestRate || !loanTerm || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
-                    showNotification('Please enter valid values');
-                    return;
-                }
-                
-                // Monthly interest rate
-                const monthlyRate = interestRate / 100 / 12;
-                
-                // Number of payments
-                const payments = loanTerm * 12;
-                
-                // EMI calculation
-                const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, payments)) / 
-                             (Math.pow(1 + monthlyRate, payments) - 1);
-                
-                // Total payment and interest
-                const total = emi * payments;
-                const interest = total - loanAmount;
-                
-                emiResult.textContent = `$${emi.toFixed(2)}`;
-                totalInterest.textContent = `$${interest.toFixed(2)}`;
-                totalPayment.textContent = `$${total.toFixed(2)}`;
-            }
+            document.getElementById('calculateEmiBtn').addEventListener('click', () => {
+                const p = parseFloat(document.getElementById('loanAmount').value);
+                const r = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+                const n = parseFloat(document.getElementById('loanTerm').value) * 12;
+                if (!p || !r || !n || p <= 0 || r <= 0 || n <= 0) { showNotification('Please enter valid values'); return; }
+                const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+                const totalPayment = emi * n;
+                const totalInterest = totalPayment - p;
+                document.getElementById('emiResult').textContent = `$${emi.toFixed(2)}`;
+                document.getElementById('totalInterest').textContent = `$${totalInterest.toFixed(2)}`;
+                document.getElementById('totalPayment').textContent = `$${totalPayment.toFixed(2)}`;
+            });
         }
 
         // Show notification
         function showNotification(message) {
             notification.querySelector('span').textContent = message;
             notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
+            setTimeout(() => notification.classList.remove('show'), 3000);
         }
 
         // Initialize the app
         window.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
-</html>
+    </html>

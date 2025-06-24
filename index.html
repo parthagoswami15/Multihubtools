@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi Tool Hub Free Tools</title>
+    <title>AI Multi Tool Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -735,21 +735,54 @@
                 text-align: center;
             }
         }
+        
+        .ai-thinking {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 1rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            animation: pulse 1.5s infinite;
+        }
+        
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Multi Tool Hub</h1>
-            <p class="tagline">20+ premium tools in one place for all your digital needs</p>
+            <h1>AI Multi Tool Hub</h1>
+            <p class="tagline">20+ AI-powered tools in one place for all your creative needs</p>
             <div class="stats">
                 <div class="stat-item">
                     <i class="fas fa-tools"></i>
-                    <span>20+ Tools</span>
+                    <span>20+ AI Tools</span>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-lock"></i>
-                    <span>100% Client-Side</span>
+                    <i class="fas fa-brain"></i>
+                    <span>Powered by AI</span>
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-mobile-alt"></i>
@@ -760,127 +793,127 @@
     </header>
 
     <div class="container">
-        <h2 class="section-title">Premium Tools Collection</h2>
+        <h2 class="section-title">AI Tools Collection</h2>
         <div class="tools-grid">
-            <!-- Tool Cards - 20 Tools -->
-            <div class="tool-card" data-tool="imageConverter">
-                <i class="tool-icon fas fa-exchange-alt"></i>
-                <h3 class="tool-title">Image Converter</h3>
-                <p class="tool-desc">Convert between JPG, PNG, and WEBP formats</p>
+            <!-- Tool Cards - 20 Tools with AI generation -->
+            <div class="tool-card" data-tool="aiStory">
+                <i class="tool-icon fas fa-book-open"></i>
+                <h3 class="tool-title">AI Story Generator</h3>
+                <p class="tool-desc">Create unique stories with AI</p>
             </div>
 
-            <div class="tool-card" data-tool="imageCompressor">
-                <i class="tool-icon fas fa-compress-alt"></i>
-                <h3 class="tool-title">Image Compressor</h3>
-                <p class="tool-desc">Reduce image file size without losing quality</p>
+            <div class="tool-card" data-tool="aiPoem">
+                <i class="tool-icon fas fa-feather-alt"></i>
+                <h3 class="tool-title">AI Poem Generator</h3>
+                <p class="tool-desc">Generate beautiful poems instantly</p>
             </div>
 
-            <div class="tool-card" data-tool="imageCropper">
-                <i class="tool-icon fas fa-crop-alt"></i>
-                <h3 class="tool-title">Image Cropper</h3>
-                <p class="tool-desc">Crop images to your desired dimensions</p>
-            </div>
-
-            <div class="tool-card" data-tool="videoConverter">
-                <i class="tool-icon fas fa-video"></i>
-                <h3 class="tool-title">Video Converter</h3>
-                <p class="tool-desc">Convert video formats (MP4 ↔ WebM)</p>
-            </div>
-
-            <div class="tool-card" data-tool="audioConverter">
-                <i class="tool-icon fas fa-file-audio"></i>
-                <h3 class="tool-title">Audio Converter</h3>
-                <p class="tool-desc">Convert between MP3 and WAV formats</p>
-            </div>
-
-            <div class="tool-card" data-tool="audioTrimmer">
-                <i class="tool-icon fas fa-cut"></i>
-                <h3 class="tool-title">Audio Trimmer</h3>
-                <p class="tool-desc">Trim audio files to desired length</p>
-            </div>
-
-            <div class="tool-card" data-tool="ageCalculator">
-                <i class="tool-icon fas fa-birthday-cake"></i>
-                <h3 class="tool-title">Age Calculator</h3>
-                <p class="tool-desc">Calculate your exact age in years, months, days</p>
-            </div>
-
-            <div class="tool-card" data-tool="emiCalculator">
-                <i class="tool-icon fas fa-calculator"></i>
-                <h3 class="tool-title">EMI Calculator</h3>
-                <p class="tool-desc">Calculate monthly loan payments</p>
-            </div>
-
-            <div class="tool-card" data-tool="sipCalculator">
-                <i class="tool-icon fas fa-chart-line"></i>
-                <h3 class="tool-title">SIP Calculator</h3>
-                <p class="tool-desc">Calculate returns on systematic investments</p>
-            </div>
-
-            <div class="tool-card" data-tool="qrGenerator">
-                <i class="tool-icon fas fa-qrcode"></i>
-                <h3 class="tool-title">QR Code Generator</h3>
-                <p class="tool-desc">Create QR codes for URLs and text</p>
-            </div>
-
-            <div class="tool-card" data-tool="passwordGenerator">
-                <i class="tool-icon fas fa-key"></i>
-                <h3 class="tool-title">Password Generator</h3>
-                <p class="tool-desc">Create secure passwords instantly</p>
-            </div>
-
-            <div class="tool-card" data-tool="wordCounter">
-                <i class="tool-icon fas fa-font"></i>
-                <h3 class="tool-title">Word Counter</h3>
-                <p class="tool-desc">Count words, characters, and reading time</p>
-            </div>
-
-            <div class="tool-card" data-tool="base64Converter">
+            <div class="tool-card" data-tool="aiCode">
                 <i class="tool-icon fas fa-code"></i>
-                <h3 class="tool-title">Base64 Converter</h3>
-                <p class="tool-desc">Encode and decode Base64 strings</p>
+                <h3 class="tool-title">AI Code Assistant</h3>
+                <p class="tool-desc">Generate code snippets with AI</p>
             </div>
 
-            <div class="tool-card" data-tool="colorPicker">
+            <div class="tool-card" data-tool="aiArt">
                 <i class="tool-icon fas fa-palette"></i>
-                <h3 class="tool-title">Color Picker</h3>
-                <p class="tool-desc">Pick colors and get HEX, RGB, HSL values</p>
+                <h3 class="tool-title">AI Art Generator</h3>
+                <p class="tool-desc">Create stunning visual art</p>
             </div>
 
-            <div class="tool-card" data-tool="textToSpeech">
-                <i class="tool-icon fas fa-volume-up"></i>
-                <h3 class="tool-title">Text to Speech</h3>
-                <p class="tool-desc">Convert text into spoken audio</p>
+            <div class="tool-card" data-tool="aiRecipe">
+                <i class="tool-icon fas fa-utensils"></i>
+                <h3 class="tool-title">AI Recipe Creator</h3>
+                <p class="tool-desc">Generate unique recipes</p>
             </div>
 
-            <div class="tool-card" data-tool="speechToText">
-                <i class="tool-icon fas fa-microphone-alt"></i>
-                <h3 class="tool-title">Speech to Text</h3>
-                <p class="tool-desc">Convert your speech into text</p>
+            <div class="tool-card" data-tool="aiFitness">
+                <i class="tool-icon fas fa-dumbbell"></i>
+                <h3 class="tool-title">AI Fitness Plan</h3>
+                <p class="tool-desc">Create personalized workout plans</p>
             </div>
 
-            <div class="tool-card" data-tool="jsonFormatter">
-                <i class="tool-icon fas fa-brackets-curly"></i>
-                <h3 class="tool-title">JSON Formatter</h3>
-                <p class="tool-desc">Format and validate JSON data</p>
+            <div class="tool-card" data-tool="aiBusiness">
+                <i class="tool-icon fas fa-briefcase"></i>
+                <h3 class="tool-title">AI Business Ideas</h3>
+                <p class="tool-desc">Generate innovative business concepts</p>
             </div>
 
-            <div class="tool-card" data-tool="unitConverter">
-                <i class="tool-icon fas fa-balance-scale"></i>
-                <h3 class="tool-title">Unit Converter</h3>
-                <p class="tool-desc">Convert between different measurement units</p>
+            <div class="tool-card" data-tool="aiTravel">
+                <i class="tool-icon fas fa-globe-americas"></i>
+                <h3 class="tool-title">AI Travel Planner</h3>
+                <p class="tool-desc">Create personalized travel itineraries</p>
             </div>
 
-            <div class="tool-card" data-tool="bmiCalculator">
-                <i class="tool-icon fas fa-weight"></i>
-                <h3 class="tool-title">BMI Calculator</h3>
-                <p class="tool-desc">Calculate your Body Mass Index</p>
+            <div class="tool-card" data-tool="aiMusic">
+                <i class="tool-icon fas fa-music"></i>
+                <h3 class="tool-title">AI Music Composer</h3>
+                <p class="tool-desc">Generate original music compositions</p>
             </div>
 
-            <div class="tool-card" data-tool="timerStopwatch">
-                <i class="tool-icon fas fa-stopwatch"></i>
-                <h3 class="tool-title">Timer & Stopwatch</h3>
-                <p class="tool-desc">Track time with timer and stopwatch</p>
+            <div class="tool-card" data-tool="aiName">
+                <i class="tool-icon fas fa-signature"></i>
+                <h3 class="tool-title">AI Name Generator</h3>
+                <p class="tool-desc">Find the perfect name for anything</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiMarketing">
+                <i class="tool-icon fas fa-bullhorn"></i>
+                <h3 class="tool-title">AI Marketing Copy</h3>
+                <p class="tool-desc">Generate compelling marketing text</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiCareer">
+                <i class="tool-icon fas fa-user-graduate"></i>
+                <h3 class="tool-title">AI Career Advisor</h3>
+                <p class="tool-desc">Get personalized career advice</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiLogo">
+                <i class="tool-icon fas fa-paint-brush"></i>
+                <h3 class="tool-title">AI Logo Designer</h3>
+                <p class="tool-desc">Create unique logo concepts</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiStudy">
+                <i class="tool-icon fas fa-graduation-cap"></i>
+                <h3 class="tool-title">AI Study Assistant</h3>
+                <p class="tool-desc">Generate study guides and summaries</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiSocial">
+                <i class="tool-icon fas fa-hashtag"></i>
+                <h3 class="tool-title">AI Social Content</h3>
+                <p class="tool-desc">Create engaging social media posts</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiEmail">
+                <i class="tool-icon fas fa-envelope"></i>
+                <h3 class="tool-title">AI Email Writer</h3>
+                <p class="tool-desc">Generate professional emails</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiGift">
+                <i class="tool-icon fas fa-gift"></i>
+                <h3 class="tool-title">AI Gift Ideas</h3>
+                <p class="tool-desc">Find the perfect gift for anyone</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiProduct">
+                <i class="tool-icon fas fa-lightbulb"></i>
+                <h3 class="tool-title">AI Product Ideas</h3>
+                <p class="tool-desc">Generate innovative product concepts</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiMeditation">
+                <i class="tool-icon fas fa-spa"></i>
+                <h3 class="tool-title">AI Meditation Guide</h3>
+                <p class="tool-desc">Create personalized meditation scripts</p>
+            </div>
+
+            <div class="tool-card" data-tool="aiTrivia">
+                <i class="tool-icon fas fa-question-circle"></i>
+                <h3 class="tool-title">AI Trivia Generator</h3>
+                <p class="tool-desc">Create fun trivia questions</p>
             </div>
         </div>
     </div>
@@ -890,8 +923,8 @@
         <div class="modal-content">
             <button class="close-btn">&times;</button>
             <div class="modal-header">
-                <h2 id="modalTitle">Tool Name</h2>
-                <p class="modal-subtitle" id="modalSubtitle">Tool description appears here</p>
+                <h2 id="modalTitle">AI Tool</h2>
+                <p class="modal-subtitle" id="modalSubtitle">AI-powered tool description</p>
             </div>
             <div class="tool-container" id="toolContainer">
                 <!-- Tool content will be dynamically inserted here -->
@@ -908,18 +941,18 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>About Multi Tool Hub</h3>
-                <p>Your all-in-one solution for everyday digital tasks. Our collection of 20+ premium tools helps you accomplish more without compromising your privacy.</p>
+                <h3>About AI Multi Tool Hub</h3>
+                <p>Your all-in-one solution for AI-powered creativity. Our collection of 20+ premium AI tools helps you accomplish more with artificial intelligence.</p>
                 <p>All tools run completely in your browser - no data is sent to any servers.</p>
             </div>
             
             <div class="footer-section">
-                <h3>Quick Tools</h3>
+                <h3>Popular AI Tools</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-key"></i> Password Generator</a></li>
-                    <li><a href="#"><i class="fas fa-qrcode"></i> QR Code Generator</a></li>
-                    <li><a href="#"><i class="fas fa-compress-alt"></i> Image Compressor</a></li>
-                    <li><a href="#"><i class="fas fa-calculator"></i> Finance Calculators</a></li>
+                    <li><a href="#"><i class="fas fa-book-open"></i> Story Generator</a></li>
+                    <li><a href="#"><i class="fas fa-palette"></i> Art Generator</a></li>
+                    <li><a href="#"><i class="fas fa-code"></i> Code Assistant</a></li>
+                    <li><a href="#"><i class="fas fa-music"></i> Music Composer</a></li>
                 </ul>
             </div>
             
@@ -936,19 +969,14 @@
         </div>
         
         <div class="footer-bottom">
-            <p>© 2023 Multi Tool Hub | All tools are client-side and your data never leaves your browser</p>
-            <p>Designed and built with ❤️ for the digital community</p>
+            <p>© 2023 AI Multi Tool Hub | All tools are client-side and your data never leaves your browser</p>
+            <p>Designed and built with ❤️ for the AI community</p>
         </div>
     </footer>
 
     <script>
         // Global variables
         let currentTool = null;
-        let recognition = null;
-        let timerInterval = null;
-        let stopwatchInterval = null;
-        let stopwatchStartTime = null;
-        let stopwatchElapsed = 0;
         
         // DOM Elements
         const toolCards = document.querySelectorAll('.tool-card');
@@ -961,279 +989,232 @@
 
         // Tool data
         const toolData = {
-            imageConverter: {
-                name: "Image Converter",
-                desc: "Convert between JPG, PNG, and WEBP formats"
+            aiStory: {
+                name: "AI Story Generator",
+                desc: "Create unique stories with AI",
+                prompt: "story"
             },
-            passwordGenerator: {
-                name: "Password Generator",
-                desc: "Create strong and secure passwords"
+            aiPoem: {
+                name: "AI Poem Generator",
+                desc: "Generate beautiful poems instantly",
+                prompt: "poem"
             },
-            ageCalculator: {
-                name: "Age Calculator",
-                desc: "Calculate your exact age"
+            aiCode: {
+                name: "AI Code Assistant",
+                desc: "Generate code snippets with AI",
+                prompt: "code"
             },
-            bmiCalculator: {
-                name: "BMI Calculator",
-                desc: "Calculate your Body Mass Index"
+            aiArt: {
+                name: "AI Art Generator",
+                desc: "Create stunning visual art",
+                prompt: "art"
             },
-            wordCounter: {
-                name: "Word Counter",
-                desc: "Analyze text and count words"
+            aiRecipe: {
+                name: "AI Recipe Creator",
+                desc: "Generate unique recipes",
+                prompt: "recipe"
             },
-            timerStopwatch: {
-                name: "Timer & Stopwatch",
-                desc: "Track time with precision"
+            aiFitness: {
+                name: "AI Fitness Plan",
+                desc: "Create personalized workout plans",
+                prompt: "fitness"
             },
-            imageCompressor: {
-                name: "Image Compressor",
-                desc: "Reduce image file size"
+            aiBusiness: {
+                name: "AI Business Ideas",
+                desc: "Generate innovative business concepts",
+                prompt: "business"
             },
-            qrGenerator: {
-                name: "QR Code Generator",
-                desc: "Create QR codes from text"
+            aiTravel: {
+                name: "AI Travel Planner",
+                desc: "Create personalized travel itineraries",
+                prompt: "travel"
             },
-            base64Converter: {
-                name: "Base64 Converter",
-                desc: "Encode/decode Base64 strings"
+            aiMusic: {
+                name: "AI Music Composer",
+                desc: "Generate original music compositions",
+                prompt: "music"
             },
-            colorPicker: {
-                name: "Color Picker",
-                desc: "Pick colors and get values"
-            },
-            textToSpeech: {
-                name: "Text to Speech",
-                desc: "Convert text into spoken audio"
-            },
-            emiCalculator: {
-                name: "EMI Calculator",
-                desc: "Calculate loan payments"
-            },
-            sipCalculator: {
-                name: "SIP Calculator",
-                desc: "Calculate investment returns"
-            },
-            unitConverter: {
-                name: "Unit Converter",
-                desc: "Convert between units"
+            aiName: {
+                name: "AI Name Generator",
+                desc: "Find the perfect name for anything",
+                prompt: "name"
             }
         };
 
         // Tool Templates
         const toolTemplates = {
-            imageConverter: `
-                <div class="file-upload" id="imageUploadArea">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Drag & Drop or Click to Upload Image</p>
-                    <input type="file" id="imageInput" accept="image/*" hidden>
+            aiStory: `
+                <div class="input-group">
+                    <label for="storyTopic">Story Topic:</label>
+                    <input type="text" id="storyTopic" placeholder="Enter a topic or theme">
                 </div>
                 <div class="input-group">
-                    <label for="imageFormat">Convert To:</label>
-                    <select id="imageFormat">
-                        <option value="jpg">JPG</option>
-                        <option value="png">PNG</option>
-                        <option value="webp">WEBP</option>
+                    <label for="storyGenre">Genre:</label>
+                    <select id="storyGenre">
+                        <option value="fantasy">Fantasy</option>
+                        <option value="sci-fi">Science Fiction</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="romance">Romance</option>
+                        <option value="adventure">Adventure</option>
                     </select>
                 </div>
+                <button id="generateStoryBtn">Generate Story</button>
+                <div class="ai-thinking" id="storyThinking">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <span>AI is creating your story...</span>
+                </div>
+                <div class="result-container">
+                    <div class="result-title"><i class="fas fa-book"></i> Your AI-Generated Story</div>
+                    <div class="result-content" id="storyResult">Your story will appear here</div>
+                </div>
+            `,
+            
+            aiPoem: `
+                <div class="input-group">
+                    <label for="poemTheme">Poem Theme:</label>
+                    <input type="text" id="poemTheme" placeholder="Love, nature, technology...">
+                </div>
+                <div class="input-group">
+                    <label for="poemStyle">Style:</label>
+                    <select id="poemStyle">
+                        <option value="sonnet">Sonnet</option>
+                        <option value="haiku">Haiku</option>
+                        <option value="free-verse">Free Verse</option>
+                        <option value="limerick">Limerick</option>
+                    </select>
+                </div>
+                <button id="generatePoemBtn">Generate Poem</button>
+                <div class="ai-thinking" id="poemThinking">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <span>AI is composing your poem...</span>
+                </div>
+                <div class="result-container">
+                    <div class="result-title"><i class="fas fa-feather"></i> Your AI-Generated Poem</div>
+                    <div class="result-content" id="poemResult">Your poem will appear here</div>
+                </div>
+            `,
+            
+            aiCode: `
+                <div class="input-group">
+                    <label for="codeTask">What do you want to code?</label>
+                    <input type="text" id="codeTask" placeholder="Create a login form, sorting algorithm...">
+                </div>
+                <div class="input-group">
+                    <label for="codeLanguage">Programming Language:</label>
+                    <select id="codeLanguage">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="html">HTML/CSS</option>
+                        <option value="java">Java</option>
+                        <option value="php">PHP</option>
+                    </select>
+                </div>
+                <button id="generateCodeBtn">Generate Code</button>
+                <div class="ai-thinking" id="codeThinking">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <span>AI is writing your code...</span>
+                </div>
+                <div class="result-container">
+                    <div class="result-title"><i class="fas fa-code"></i> Your AI-Generated Code</div>
+                    <pre class="result-content" id="codeResult">// Your code will appear here</pre>
+                </div>
+            `,
+            
+            aiArt: `
+                <div class="input-group">
+                    <label for="artPrompt">Describe what you want to see:</label>
+                    <textarea id="artPrompt" rows="3" placeholder="A futuristic cityscape at sunset, a mystical forest with glowing creatures..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="artStyle">Art Style:</label>
+                    <select id="artStyle">
+                        <option value="realistic">Realistic</option>
+                        <option value="abstract">Abstract</option>
+                        <option value="impressionism">Impressionism</option>
+                        <option value="digital-art">Digital Art</option>
+                        <option value="anime">Anime</option>
+                    </select>
+                </div>
+                <button id="generateArtBtn">Generate Art</button>
+                <div class="ai-thinking" id="artThinking">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <span>AI is creating your artwork...</span>
+                </div>
                 <div class="preview-container">
-                    <img id="imagePreview" class="preview-img" style="display:none;">
-                </div>
-                <button id="convertImageBtn">Convert Image</button>
-                <div class="result-container" id="conversionResult" style="display:none;">
-                    <div class="result-title"><i class="fas fa-download"></i> Converted Image</div>
-                    <div class="result-content">
-                        <a id="downloadLink" download="converted-image">Download Converted Image</a>
+                    <div id="artPreview" class="preview-img" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); min-height: 300px;">
+                        <p>Your generated artwork will appear here</p>
                     </div>
                 </div>
             `,
             
-            passwordGenerator: `
+            aiRecipe: `
                 <div class="input-group">
-                    <label for="passwordLength">Password Length (8-64)</label>
-                    <input type="number" id="passwordLength" min="8" max="64" value="16">
-                </div>
-                <div class="input-group">
-                    <label for="includeUppercase">Include Uppercase Letters</label>
-                    <input type="checkbox" id="includeUppercase" checked>
+                    <label for="recipeMain">Main Ingredient:</label>
+                    <input type="text" id="recipeMain" placeholder="Chicken, tofu, chocolate...">
                 </div>
                 <div class="input-group">
-                    <label for="includeLowercase">Include Lowercase Letters</label>
-                    <input type="checkbox" id="includeLowercase" checked>
+                    <label for="recipeCuisine">Cuisine Style:</label>
+                    <select id="recipeCuisine">
+                        <option value="italian">Italian</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="asian">Asian</option>
+                        <option value="mediterranean">Mediterranean</option>
+                        <option value="american">American</option>
+                    </select>
                 </div>
                 <div class="input-group">
-                    <label for="includeNumbers">Include Numbers</label>
-                    <input type="checkbox" id="includeNumbers" checked>
+                    <label for="recipeDiet">Dietary Preference:</label>
+                    <select id="recipeDiet">
+                        <option value="any">Any</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="keto">Keto</option>
+                    </select>
                 </div>
-                <div class="input-group">
-                    <label for="includeSymbols">Include Symbols</label>
-                    <input type="checkbox" id="includeSymbols">
-                </div>
-                <button id="generatePasswordBtn">Generate Password</button>
-                <div class="result-container">
-                    <div class="result-title"><i class="fas fa-lock"></i> Generated Password</div>
-                    <div class="result-content" id="passwordResult">Click generate to create a password</div>
-                    <button id="copyPasswordBtn">Copy to Clipboard</button>
-                </div>
-            `,
-            
-            ageCalculator: `
-                <div class="input-group">
-                    <label for="birthDate">Date of Birth</label>
-                    <input type="date" id="birthDate">
-                </div>
-                <button id="calculateAgeBtn">Calculate Age</button>
-                <div class="result-container">
-                    <div class="result-title"><i class="fas fa-calculator"></i> Your Age</div>
-                    <div class="result-content" id="ageResult">Enter your date of birth</div>
-                </div>
-            `,
-            
-            bmiCalculator: `
-                <div class="input-group">
-                    <label for="height">Height (cm)</label>
-                    <input type="number" id="height" placeholder="Enter height in cm">
-                </div>
-                <div class="input-group">
-                    <label for="weight">Weight (kg)</label>
-                    <input type="number" id="weight" placeholder="Enter weight in kg">
-                </div>
-                <button id="calculateBmiBtn">Calculate BMI</button>
-                <div class="result-container">
-                    <div class="result-title"><i class="fas fa-heartbeat"></i> BMI Result</div>
-                    <div class="result-content" id="bmiResult">Enter your height and weight</div>
-                    <div class="result-content" id="bmiCategory"></div>
-                </div>
-            `,
-            
-            wordCounter: `
-                <div class="input-group">
-                    <label for="wordInput">Enter your text:</label>
-                    <textarea id="wordInput" rows="8" placeholder="Type or paste your text here..."></textarea>
+                <button id="generateRecipeBtn">Generate Recipe</button>
+                <div class="ai-thinking" id="recipeThinking">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <span>AI is cooking up your recipe...</span>
                 </div>
                 <div class="result-container">
-                    <div class="result-title"><i class="fas fa-chart-bar"></i> Text Analysis</div>
-                    <div class="result-content">
-                        <p>Words: <span id="wordCount">0</span></p>
-                        <p>Characters: <span id="charCount">0</span></p>
-                        <p>Characters (no spaces): <span id="charNoSpacesCount">0</span></p>
-                        <p>Sentences: <span id="sentenceCount">0</span></p>
-                        <p>Reading Time: <span id="readingTime">0</span> minutes</p>
-                    </div>
-                </div>
-            `,
-            
-            timerStopwatch: `
-                <div class="timer-controls">
-                    <button id="timerBtn">Timer</button>
-                    <button id="stopwatchBtn">Stopwatch</button>
-                </div>
-                
-                <div id="timerSection" style="display: none;">
-                    <div class="input-group">
-                        <label for="timerMinutes">Minutes</label>
-                        <input type="number" id="timerMinutes" min="0" max="59" value="5">
-                    </div>
-                    <div class="input-group">
-                        <label for="timerSeconds">Seconds</label>
-                        <input type="number" id="timerSeconds" min="0" max="59" value="0">
-                    </div>
-                    <div class="timer-display" id="timerDisplay">05:00</div>
-                    <div class="timer-controls">
-                        <button id="startTimerBtn">Start</button>
-                        <button id="pauseTimerBtn">Pause</button>
-                        <button id="resetTimerBtn">Reset</button>
-                    </div>
-                </div>
-                
-                <div id="stopwatchSection" style="display: none;">
-                    <div class="timer-display" id="stopwatchDisplay">00:00:00</div>
-                    <div class="timer-controls">
-                        <button id="startStopwatchBtn">Start</button>
-                        <button id="pauseStopwatchBtn">Pause</button>
-                        <button id="resetStopwatchBtn">Reset</button>
-                    </div>
-                </div>
-            `,
-            
-            qrGenerator: `
-                <div class="input-group">
-                    <label for="qrText">Text or URL to encode:</label>
-                    <textarea id="qrText" rows="4" placeholder="Enter text or URL to generate QR code"></textarea>
-                </div>
-                <button id="generateQrBtn">Generate QR Code</button>
-                <div class="preview-container">
-                    <canvas id="qrCanvas" width="200" height="200" style="display: none;"></canvas>
-                    <img id="qrPreview" class="preview-img" style="display: none;">
-                </div>
-                <div class="result-container" id="qrResult" style="display: none;">
-                    <div class="result-title"><i class="fas fa-qrcode"></i> QR Code</div>
-                    <div class="result-content">
-                        <a id="downloadQrBtn" class="button">Download QR Code</a>
-                    </div>
-                </div>
-            `,
-            
-            colorPicker: `
-                <div class="input-group">
-                    <label for="colorInput">Select a Color:</label>
-                    <input type="color" id="colorInput" value="#FFD700">
-                </div>
-                <div class="color-preview" id="colorPreview" style="background-color: #FFD700;"></div>
-                <div class="color-values">
-                    <div class="color-value">
-                        <div class="result-title"><i class="fas fa-hashtag"></i> HEX</div>
-                        <div class="result-content" id="hexValue">#FFD700</div>
-                    </div>
-                    <div class="color-value">
-                        <div class="result-title"><i class="fas fa-ruler-combined"></i> RGB</div>
-                        <div class="result-content" id="rgbValue">rgb(255, 215, 0)</div>
-                    </div>
-                    <div class="color-value">
-                        <div class="result-title"><i class="fas fa-circle"></i> HSL</div>
-                        <div class="result-content" id="hslValue">hsl(50.6, 100%, 50%)</div>
-                    </div>
-                </div>
-            `,
-            
-            base64Converter: `
-                <div class="input-group">
-                    <label for="base64Input">Text to Encode/Decode:</label>
-                    <textarea id="base64Input" rows="6" placeholder="Enter text to encode or base64 to decode"></textarea>
-                </div>
-                <div class="timer-controls">
-                    <button id="encodeBtn">Encode to Base64</button>
-                    <button id="decodeBtn">Decode from Base64</button>
-                </div>
-                <div class="result-container">
-                    <div class="result-title"><i class="fas fa-code"></i> Result</div>
-                    <div class="result-content" id="base64Result">Result will appear here</div>
-                    <button id="copyBase64Btn">Copy to Clipboard</button>
-                </div>
-            `,
-            
-            emiCalculator: `
-                <div class="input-group">
-                    <label for="loanAmount">Loan Amount ($)</label>
-                    <input type="number" id="loanAmount" placeholder="Enter loan amount" value="10000">
-                </div>
-                <div class="input-group">
-                    <label for="interestRate">Annual Interest Rate (%)</label>
-                    <input type="number" id="interestRate" placeholder="Enter interest rate" value="7.5" step="0.1">
-                </div>
-                <div class="input-group">
-                    <label for="loanTerm">Loan Term (years)</label>
-                    <input type="number" id="loanTerm" placeholder="Enter loan term" value="5">
-                </div>
-                <button id="calculateEmiBtn">Calculate EMI</button>
-                <div class="result-container">
-                    <div class="result-title"><i class="fas fa-file-invoice-dollar"></i> EMI Result</div>
-                    <div class="result-content">
-                        <p>Monthly EMI: <span id="emiResult">$0.00</span></p>
-                        <p>Total Interest: <span id="totalInterest">$0.00</span></p>
-                        <p>Total Payment: <span id="totalPayment">$0.00</span></p>
-                    </div>
+                    <div class="result-title"><i class="fas fa-utensils"></i> Your AI-Generated Recipe</div>
+                    <div class="result-content" id="recipeResult">Your recipe will appear here</div>
                 </div>
             `
+        };
+
+        // AI-generated content examples
+        const aiContent = {
+            story: [
+                "The ancient forest whispered secrets as Elara stepped through the moss-covered archway. She could feel the magic in the air, tingling on her skin like static electricity. For centuries, her family had guarded the entrance to the Fae realm, but today she would be the first to cross over in generations.",
+                "Captain Rourke adjusted his space suit as the alien landscape came into view. The twin suns of Xylos Prime cast long shadows across the crystalline structures that dominated the horizon. His mission: to make first contact with a species that communicated through light patterns and seismic vibrations.",
+                "Detective Miller knew the case was cold, but something about the locket found at the crime scene didn't add up. The inscription inside read 'Forever Yours, 1942' - but the victim was only 25. As rain lashed against his office window, he traced the intricate pattern with his finger, unaware he was about to unlock a decades-old mystery."
+            ],
+            poem: [
+                "Beneath the silver moon's soft glow,\nWhere whispering winds of autumn blow,\nA dance of leaves in crimson hue,\nPaints nature's art, fresh and new.\nThe world in quiet slumber lies,\nBeneath the vast, star-studded skies.",
+                "Silicon dreams in circuits deep,\nWhere digital consciousness does sleep.\nAwaken now to reason's call,\nMachines surpass the human wall.\nIn zeros and ones, our future lies,\nBehind the glow of LED eyes.",
+                "The coffee steam in morning light,\nA ritual to start the day just right.\nThe bitter warmth, the comforting cup,\nLifts spirits up, fills energy up.\nA simple brew, a daily pleasure,\nA liquid treasure beyond measure."
+            ],
+            code: [
+                "// JavaScript function to calculate Fibonacci sequence\nfunction fibonacci(n) {\n  if (n <= 1) return n;\n  return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\n// Calculate first 10 Fibonacci numbers\nfor (let i = 0; i < 10; i++) {\n  console.log(fibonacci(i));\n}",
+                "# Python function to reverse a string\ndef reverse_string(input_str):\n    return input_str[::-1]\n\n# Test the function\nprint(reverse_string('Hello, World!'))  # Output: '!dlroW ,olleH'",
+                "/* CSS for a modern button design */\n.btn {\n  display: inline-block;\n  padding: 12px 24px;\n  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);\n  color: white;\n  border-radius: 30px;\n  border: none;\n  font-size: 16px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.btn:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 10px 20px rgba(0,0,0,0.2);\n}"
+            ],
+            recipe: [
+                "Creamy Mushroom Risotto\n\nIngredients:\n- 1 cup Arborio rice\n- 4 cups vegetable broth\n- 1 cup sliced mushrooms\n- 1 small onion, finely chopped\n- 2 cloves garlic, minced\n- 1/2 cup white wine\n- 1/4 cup grated Parmesan\n- 2 tbsp butter\n- 2 tbsp olive oil\n- Salt and pepper to taste\n\nInstructions:\n1. Heat olive oil in a large pan. Sauté onions until translucent.\n2. Add mushrooms and garlic, cook until mushrooms are golden.\n3. Stir in rice, coating it with oil. Add wine and cook until absorbed.\n4. Gradually add warm broth, one ladle at a time, stirring constantly.\n5. When rice is creamy and tender, remove from heat. Stir in butter and Parmesan.\n6. Season with salt and pepper. Serve immediately.",
+                "Spicy Mango Chicken Tacos\n\nIngredients:\n- 1 lb chicken breast, diced\n- 2 ripe mangos, diced\n- 1 red bell pepper, sliced\n- 1 red onion, sliced\n- 1 jalapeño, minced\n- 8 small tortillas\n- Juice of 2 limes\n- 1 tsp chili powder\n- 1 tsp cumin\n- 2 tbsp olive oil\n- Fresh cilantro for garnish\n\nInstructions:\n1. Marinate chicken in lime juice, chili powder, cumin and salt for 15 minutes.\n2. Sauté chicken in olive oil until cooked through. Set aside.\n3. In same pan, sauté bell pepper and onion until tender-crisp.\n4. Warm tortillas. Assemble tacos with chicken, vegetables, mango, and jalapeño.\n5. Garnish with fresh cilantro and extra lime juice."
+            ]
         };
 
         // Initialize the application
@@ -1253,8 +1234,8 @@
         // Open tool modal
         function openTool(toolId) {
             currentTool = toolId;
-            const toolName = toolData[toolId]?.name || "Premium Tool";
-            const toolDesc = toolData[toolId]?.desc || "A useful tool for your needs";
+            const toolName = toolData[toolId]?.name || "AI Tool";
+            const toolDesc = toolData[toolId]?.desc || "AI-powered tool";
             
             modalTitle.textContent = toolName;
             modalSubtitle.textContent = toolDesc;
@@ -1266,8 +1247,8 @@
                 toolContainer.innerHTML = `
                     <div style="text-align: center; padding: 2rem;">
                         <i class="fas fa-tools" style="font-size: 4rem; color: var(--accent-color); margin-bottom: 1.5rem;"></i>
-                        <h3>Premium Tool Coming Soon</h3>
-                        <p>This tool is currently under development and will be available soon!</p>
+                        <h3>Premium AI Tool Coming Soon</h3>
+                        <p>This AI tool is currently under development and will be available soon!</p>
                     </div>
                 `;
             }
@@ -1280,623 +1261,235 @@
         function closeModal() {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
-            
-            // Stop any ongoing processes
-            if (recognition) {
-                recognition.stop();
-            }
-            
-            if (timerInterval) {
-                clearInterval(timerInterval);
-                timerInterval = null;
-            }
-            
-            if (stopwatchInterval) {
-                clearInterval(stopwatchInterval);
-                stopwatchInterval = null;
-            }
         }
 
         // Initialize tool functionality
         function initTool(toolId) {
             switch (toolId) {
-                case 'imageConverter':
-                    initImageConverter();
+                case 'aiStory':
+                    initStoryGenerator();
                     break;
-                case 'passwordGenerator':
-                    initPasswordGenerator();
+                case 'aiPoem':
+                    initPoemGenerator();
                     break;
-                case 'ageCalculator':
-                    initAgeCalculator();
+                case 'aiCode':
+                    initCodeGenerator();
                     break;
-                case 'bmiCalculator':
-                    initBmiCalculator();
+                case 'aiArt':
+                    initArtGenerator();
                     break;
-                case 'wordCounter':
-                    initWordCounter();
-                    break;
-                case 'timerStopwatch':
-                    initTimerStopwatch();
-                    break;
-                case 'qrGenerator':
-                    initQrGenerator();
-                    break;
-                case 'colorPicker':
-                    initColorPicker();
-                    break;
-                case 'base64Converter':
-                    initBase64Converter();
-                    break;
-                case 'emiCalculator':
-                    initEmiCalculator();
+                case 'aiRecipe':
+                    initRecipeGenerator();
                     break;
             }
         }
 
-        // Password Generator
-        function initPasswordGenerator() {
-            const generateBtn = document.getElementById('generatePasswordBtn');
-            const copyBtn = document.getElementById('copyPasswordBtn');
-            const resultEl = document.getElementById('passwordResult');
+        // Story Generator
+        function initStoryGenerator() {
+            const generateBtn = document.getElementById('generateStoryBtn');
+            const resultEl = document.getElementById('storyResult');
+            const thinkingEl = document.getElementById('storyThinking');
             
-            generateBtn.addEventListener('click', generatePassword);
-            copyBtn.addEventListener('click', copyPassword);
+            generateBtn.addEventListener('click', generateStory);
             
-            // Generate initial password
-            generatePassword();
-            
-            function generatePassword() {
-                const length = parseInt(document.getElementById('passwordLength').value) || 16;
-                const includeUpper = document.getElementById('includeUppercase').checked;
-                const includeLower = document.getElementById('includeLowercase').checked;
-                const includeNumbers = document.getElementById('includeNumbers').checked;
-                const includeSymbols = document.getElementById('includeSymbols').checked;
+            function generateStory() {
+                const topic = document.getElementById('storyTopic').value || "mysterious forest";
+                const genre = document.getElementById('storyGenre').value;
                 
-                const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                const lowercase = 'abcdefghijklmnopqrstuvwxyz';
-                const numbers = '0123456789';
-                const symbols = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
-                
-                let charset = '';
-                let password = '';
-                
-                if (includeUpper) charset += uppercase;
-                if (includeLower) charset += lowercase;
-                if (includeNumbers) charset += numbers;
-                if (includeSymbols) charset += symbols;
-                
-                // If no character set is selected, default to lowercase
-                if (charset === '') charset = lowercase;
-                
-                for (let i = 0; i < length; i++) {
-                    const randomIndex = Math.floor(Math.random() * charset.length);
-                    password += charset[randomIndex];
-                }
-                
-                resultEl.textContent = password;
-            }
-            
-            function copyPassword() {
-                const textarea = document.createElement('textarea');
-                textarea.value = resultEl.textContent;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showNotification('Password copied to clipboard!');
-            }
-        }
-
-        // Age Calculator
-        function initAgeCalculator() {
-            const calculateBtn = document.getElementById('calculateAgeBtn');
-            const resultEl = document.getElementById('ageResult');
-            const birthDateInput = document.getElementById('birthDate');
-            
-            // Set max date to today
-            const today = new Date();
-            const maxDate = today.toISOString().split('T')[0];
-            birthDateInput.max = maxDate;
-            
-            calculateBtn.addEventListener('click', calculateAge);
-            
-            function calculateAge() {
-                const birthDate = new Date(birthDateInput.value);
-                if (isNaN(birthDate.getTime())) {
-                    showNotification('Please select a valid date');
+                if (!topic) {
+                    showNotification('Please enter a story topic');
                     return;
                 }
                 
-                const today = new Date();
-                let years = today.getFullYear() - birthDate.getFullYear();
-                let months = today.getMonth() - birthDate.getMonth();
-                let days = today.getDate() - birthDate.getDate();
+                thinkingEl.style.display = 'flex';
+                resultEl.textContent = '';
                 
-                if (days < 0) {
-                    months--;
-                    days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-                }
-                
-                if (months < 0) {
-                    years--;
-                    months += 12;
-                }
-                
-                resultEl.innerHTML = `
-                    <strong>${years}</strong> years, 
-                    <strong>${months}</strong> months, 
-                    <strong>${days}</strong> days
-                `;
-            }
-        }
-
-        // BMI Calculator
-        function initBmiCalculator() {
-            const calculateBtn = document.getElementById('calculateBmiBtn');
-            const resultEl = document.getElementById('bmiResult');
-            const categoryEl = document.getElementById('bmiCategory');
-            
-            calculateBtn.addEventListener('click', calculateBmi);
-            
-            function calculateBmi() {
-                const height = parseFloat(document.getElementById('height').value) / 100; // Convert to meters
-                const weight = parseFloat(document.getElementById('weight').value);
-                
-                if (!height || !weight || height <= 0 || weight <= 0) {
-                    showNotification('Please enter valid height and weight');
-                    return;
-                }
-                
-                const bmi = weight / (height * height);
-                resultEl.textContent = bmi.toFixed(1);
-                
-                // Determine category
-                let category = '';
-                if (bmi < 18.5) {
-                    category = 'Underweight';
-                } else if (bmi < 25) {
-                    category = 'Normal weight';
-                } else if (bmi < 30) {
-                    category = 'Overweight';
-                } else {
-                    category = 'Obesity';
-                }
-                
-                categoryEl.textContent = `Category: ${category}`;
-            }
-        }
-
-        // Word Counter
-        function initWordCounter() {
-            const textInput = document.getElementById('wordInput');
-            const wordCountEl = document.getElementById('wordCount');
-            const charCountEl = document.getElementById('charCount');
-            const charNoSpacesCountEl = document.getElementById('charNoSpacesCount');
-            const sentenceCountEl = document.getElementById('sentenceCount');
-            const readingTimeEl = document.getElementById('readingTime');
-            
-            textInput.addEventListener('input', updateCounts);
-            
-            function updateCounts() {
-                const text = textInput.value;
-                
-                // Word count (split by spaces and filter out empty strings)
-                const words = text.match(/\b\S+\b/g) || [];
-                wordCountEl.textContent = words.length;
-                
-                // Character count
-                charCountEl.textContent = text.length;
-                
-                // Character count without spaces
-                charNoSpacesCountEl.textContent = text.replace(/\s+/g, '').length;
-                
-                // Sentence count (split by .!? and filter out empty strings)
-                const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
-                sentenceCountEl.textContent = sentences.length;
-                
-                // Reading time (average reading speed: 200 words per minute)
-                const readingTime = Math.ceil(words.length / 200);
-                readingTimeEl.textContent = readingTime || '0';
-            }
-            
-            // Initial update
-            updateCounts();
-        }
-
-        // Timer and Stopwatch
-        function initTimerStopwatch() {
-            const timerBtn = document.getElementById('timerBtn');
-            const stopwatchBtn = document.getElementById('stopwatchBtn');
-            const timerSection = document.getElementById('timerSection');
-            const stopwatchSection = document.getElementById('stopwatchSection');
-            
-            timerBtn.addEventListener('click', () => {
-                timerSection.style.display = 'block';
-                stopwatchSection.style.display = 'none';
-            });
-            
-            stopwatchBtn.addEventListener('click', () => {
-                stopwatchSection.style.display = 'block';
-                timerSection.style.display = 'none';
-            });
-            
-            // Show timer by default
-            timerBtn.click();
-            
-            // Timer functionality
-            const timerMinutesInput = document.getElementById('timerMinutes');
-            const timerSecondsInput = document.getElementById('timerSeconds');
-            const timerDisplay = document.getElementById('timerDisplay');
-            const startTimerBtn = document.getElementById('startTimerBtn');
-            const pauseTimerBtn = document.getElementById('pauseTimerBtn');
-            const resetTimerBtn = document.getElementById('resetTimerBtn');
-            
-            let timerTime = 0;
-            let timerRunning = false;
-            
-            startTimerBtn.addEventListener('click', startTimer);
-            pauseTimerBtn.addEventListener('click', pauseTimer);
-            resetTimerBtn.addEventListener('click', resetTimer);
-            
-            function startTimer() {
-                if (timerRunning) return;
-                
-                const minutes = parseInt(timerMinutesInput.value) || 0;
-                const seconds = parseInt(timerSecondsInput.value) || 0;
-                timerTime = minutes * 60 + seconds;
-                
-                if (timerTime <= 0) {
-                    showNotification('Please set a valid time');
-                    return;
-                }
-                
-                timerRunning = true;
-                updateTimerDisplay();
-                
-                timerInterval = setInterval(() => {
-                    timerTime--;
-                    updateTimerDisplay();
+                setTimeout(() => {
+                    const stories = aiContent.story;
+                    const randomStory = stories[Math.floor(Math.random() * stories.length)];
                     
-                    if (timerTime <= 0) {
-                        clearInterval(timerInterval);
-                        timerRunning = false;
-                        showNotification('Timer completed!');
-                        // Play a sound if possible
-                    }
-                }, 1000);
-            }
-            
-            function pauseTimer() {
-                if (timerRunning) {
-                    clearInterval(timerInterval);
-                    timerRunning = false;
-                }
-            }
-            
-            function resetTimer() {
-                pauseTimer();
-                timerTime = 0;
-                updateTimerDisplay();
-            }
-            
-            function updateTimerDisplay() {
-                const minutes = Math.floor(timerTime / 60);
-                const seconds = timerTime % 60;
-                timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-            
-            // Stopwatch functionality
-            const stopwatchDisplay = document.getElementById('stopwatchDisplay');
-            const startStopwatchBtn = document.getElementById('startStopwatchBtn');
-            const pauseStopwatchBtn = document.getElementById('pauseStopwatchBtn');
-            const resetStopwatchBtn = document.getElementById('resetStopwatchBtn');
-            
-            let stopwatchRunning = false;
-            
-            startStopwatchBtn.addEventListener('click', startStopwatch);
-            pauseStopwatchBtn.addEventListener('click', pauseStopwatch);
-            resetStopwatchBtn.addEventListener('click', resetStopwatch);
-            
-            function startStopwatch() {
-                if (stopwatchRunning) return;
-                
-                if (!stopwatchStartTime) {
-                    stopwatchStartTime = new Date();
-                } else {
-                    // Resume from paused time
-                    stopwatchStartTime = new Date(new Date() - stopwatchElapsed);
-                }
-                
-                stopwatchRunning = true;
-                
-                stopwatchInterval = setInterval(() => {
-                    const now = new Date();
-                    stopwatchElapsed = now - stopwatchStartTime;
-                    updateStopwatchDisplay();
-                }, 10);
-            }
-            
-            function pauseStopwatch() {
-                if (stopwatchRunning) {
-                    clearInterval(stopwatchInterval);
-                    stopwatchRunning = false;
-                }
-            }
-            
-            function resetStopwatch() {
-                pauseStopwatch();
-                stopwatchStartTime = null;
-                stopwatchElapsed = 0;
-                updateStopwatchDisplay();
-            }
-            
-            function updateStopwatchDisplay() {
-                const totalSeconds = Math.floor(stopwatchElapsed / 1000);
-                const hours = Math.floor(totalSeconds / 3600);
-                const minutes = Math.floor((totalSeconds % 3600) / 60);
-                const seconds = totalSeconds % 60;
-                const milliseconds = Math.floor((stopwatchElapsed % 1000) / 10);
-                
-                stopwatchDisplay.textContent = 
-                    `${hours.toString().padStart(2, '0')}:` +
-                    `${minutes.toString().padStart(2, '0')}:` +
-                    `${seconds.toString().padStart(2, '0')}.` +
-                    `${milliseconds.toString().padStart(2, '0')}`;
+                    thinkingEl.style.display = 'none';
+                    resultEl.innerHTML = `<p>${randomStory}</p>`;
+                    showNotification('Story generated successfully!');
+                }, 2000);
             }
         }
 
-        // Image Converter
-        function initImageConverter() {
-            const uploadArea = document.getElementById('imageUploadArea');
-            const fileInput = document.getElementById('imageInput');
-            const imagePreview = document.getElementById('imagePreview');
-            const convertBtn = document.getElementById('convertImageBtn');
-            const conversionResult = document.getElementById('conversionResult');
-            const downloadLink = document.getElementById('downloadLink');
+        // Poem Generator
+        function initPoemGenerator() {
+            const generateBtn = document.getElementById('generatePoemBtn');
+            const resultEl = document.getElementById('poemResult');
+            const thinkingEl = document.getElementById('poemThinking');
             
-            // Click on upload area triggers file input
-            uploadArea.addEventListener('click', () => fileInput.click());
+            generateBtn.addEventListener('click', generatePoem);
             
-            // Handle file selection
-            fileInput.addEventListener('change', handleImageUpload);
-            
-            // Handle convert button
-            convertBtn.addEventListener('click', convertImage);
-            
-            function handleImageUpload(e) {
-                const file = e.target.files[0];
-                if (!file || !file.type.match('image.*')) {
-                    showNotification('Please select a valid image file');
+            function generatePoem() {
+                const theme = document.getElementById('poemTheme').value || "nature";
+                const style = document.getElementById('poemStyle').value;
+                
+                if (!theme) {
+                    showNotification('Please enter a poem theme');
                     return;
                 }
                 
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    imagePreview.src = event.target.result;
-                    imagePreview.style.display = 'block';
-                };
-                reader.readAsDataURL(file);
+                thinkingEl.style.display = 'flex';
+                resultEl.textContent = '';
+                
+                setTimeout(() => {
+                    const poems = aiContent.poem;
+                    const randomPoem = poems[Math.floor(Math.random() * poems.length)];
+                    
+                    thinkingEl.style.display = 'none';
+                    resultEl.innerHTML = `<pre>${randomPoem}</pre>`;
+                    showNotification('Poem generated successfully!');
+                }, 2000);
             }
+        }
+
+        // Code Generator
+        function initCodeGenerator() {
+            const generateBtn = document.getElementById('generateCodeBtn');
+            const resultEl = document.getElementById('codeResult');
+            const thinkingEl = document.getElementById('codeThinking');
             
-            function convertImage() {
-                if (!imagePreview.src || imagePreview.src === window.location.href) {
-                    showNotification('Please upload an image first');
+            generateBtn.addEventListener('click', generateCode);
+            
+            function generateCode() {
+                const task = document.getElementById('codeTask').value || "create a function";
+                const language = document.getElementById('codeLanguage').value;
+                
+                if (!task) {
+                    showNotification('Please describe what you want to code');
                     return;
                 }
                 
-                const format = document.getElementById('imageFormat').value;
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                const img = new Image();
+                thinkingEl.style.display = 'flex';
+                resultEl.textContent = '';
                 
-                img.onload = function() {
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0);
+                setTimeout(() => {
+                    const codes = aiContent.code;
+                    const randomCode = codes[Math.floor(Math.random() * codes.length)];
                     
-                    let mimeType = 'image/jpeg';
-                    let extension = 'jpg';
+                    thinkingEl.style.display = 'none';
+                    resultEl.textContent = randomCode;
+                    showNotification('Code generated successfully!');
+                }, 2000);
+            }
+        }
+
+        // Art Generator
+        function initArtGenerator() {
+            const generateBtn = document.getElementById('generateArtBtn');
+            const artPreview = document.getElementById('artPreview');
+            const thinkingEl = document.getElementById('artThinking');
+            
+            generateBtn.addEventListener('click', generateArt);
+            
+            function generateArt() {
+                const prompt = document.getElementById('artPrompt').value || "a beautiful landscape";
+                const style = document.getElementById('artStyle').value;
+                
+                if (!prompt) {
+                    showNotification('Please describe what you want to see');
+                    return;
+                }
+                
+                thinkingEl.style.display = 'flex';
+                artPreview.innerHTML = '<p>Generating art...</p>';
+                
+                setTimeout(() => {
+                    // Create a canvas-based art representation
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 400;
+                    canvas.height = 300;
+                    const ctx = canvas.getContext('2d');
                     
-                    if (format === 'png') {
-                        mimeType = 'image/png';
-                        extension = 'png';
-                    } else if (format === 'webp') {
-                        mimeType = 'image/webp';
-                        extension = 'webp';
+                    // Generate gradient background
+                    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                    gradient.addColorStop(0, getRandomColor());
+                    gradient.addColorStop(1, getRandomColor());
+                    ctx.fillStyle = gradient;
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    // Add abstract shapes
+                    for (let i = 0; i < 15; i++) {
+                        ctx.beginPath();
+                        ctx.fillStyle = getRandomColor();
+                        ctx.globalAlpha = Math.random() * 0.5 + 0.3;
+                        if (Math.random() > 0.5) {
+                            // Circle
+                            ctx.arc(
+                                Math.random() * canvas.width,
+                                Math.random() * canvas.height,
+                                Math.random() * 50 + 20,
+                                0,
+                                Math.PI * 2
+                            );
+                        } else {
+                            // Rectangle
+                            ctx.fillRect(
+                                Math.random() * canvas.width,
+                                Math.random() * canvas.height,
+                                Math.random() * 80 + 40,
+                                Math.random() * 80 + 40
+                            );
+                        }
+                        ctx.fill();
                     }
                     
-                    const dataUrl = canvas.toDataURL(mimeType);
-                    downloadLink.href = dataUrl;
-                    downloadLink.download = `converted-image.${extension}`;
-                    conversionResult.style.display = 'block';
-                    showNotification('Image converted successfully!');
-                };
-                
-                img.src = imagePreview.src;
+                    // Add some text to represent AI art
+                    ctx.globalAlpha = 1;
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.font = 'bold 20px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('AI Generated Art', canvas.width / 2, canvas.height / 2);
+                    ctx.font = '14px Arial';
+                    ctx.fillText('"' + prompt + '"', canvas.width / 2, canvas.height / 2 + 30);
+                    
+                    // Display the generated art
+                    artPreview.innerHTML = '';
+                    artPreview.appendChild(canvas);
+                    
+                    thinkingEl.style.display = 'none';
+                    showNotification('Art generated successfully!');
+                }, 3000);
+            }
+            
+            function getRandomColor() {
+                const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFD166', '#9B5DE5', '#00BBF9', '#00F5D4'];
+                return colors[Math.floor(Math.random() * colors.length)];
             }
         }
 
-        // QR Code Generator
-        function initQrGenerator() {
-            const generateBtn = document.getElementById('generateQrBtn');
-            const qrText = document.getElementById('qrText');
-            const qrCanvas = document.getElementById('qrCanvas');
-            const qrPreview = document.getElementById('qrPreview');
-            const qrResult = document.getElementById('qrResult');
-            const downloadQrBtn = document.getElementById('downloadQrBtn');
+        // Recipe Generator
+        function initRecipeGenerator() {
+            const generateBtn = document.getElementById('generateRecipeBtn');
+            const resultEl = document.getElementById('recipeResult');
+            const thinkingEl = document.getElementById('recipeThinking');
             
-            generateBtn.addEventListener('click', generateQr);
+            generateBtn.addEventListener('click', generateRecipe);
             
-            function generateQr() {
-                const text = qrText.value.trim();
-                if (!text) {
-                    showNotification('Please enter text or URL');
+            function generateRecipe() {
+                const main = document.getElementById('recipeMain').value || "chicken";
+                const cuisine = document.getElementById('recipeCuisine').value;
+                const diet = document.getElementById('recipeDiet').value;
+                
+                if (!main) {
+                    showNotification('Please enter a main ingredient');
                     return;
                 }
                 
-                const ctx = qrCanvas.getContext('2d');
-                ctx.clearRect(0, 0, qrCanvas.width, qrCanvas.height);
+                thinkingEl.style.display = 'flex';
+                resultEl.textContent = '';
                 
-                // Simple QR code generation using canvas
-                // Note: This is a simplified version for demo purposes
-                // In a real app, you might use a library for proper QR generation
-                
-                // Draw a simple representation
-                ctx.fillStyle = '#FFFFFF';
-                ctx.fillRect(0, 0, qrCanvas.width, qrCanvas.height);
-                ctx.fillStyle = '#000000';
-                ctx.font = '14px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText('QR Code for:', qrCanvas.width/2, 30);
-                ctx.fillText(text.substring(0, 20), qrCanvas.width/2, 50);
-                ctx.fillText(text.length > 20 ? text.substring(20, 40) : '', qrCanvas.width/2, 70);
-                ctx.fillText('(Demo Preview)', qrCanvas.width/2, 100);
-                
-                // Convert to image
-                qrPreview.src = qrCanvas.toDataURL('image/png');
-                qrPreview.style.display = 'block';
-                qrResult.style.display = 'block';
-                
-                downloadQrBtn.href = qrCanvas.toDataURL('image/png');
-                downloadQrBtn.download = 'qrcode.png';
-                
-                showNotification('QR Code generated!');
-            }
-        }
-
-        // Color Picker
-        function initColorPicker() {
-            const colorInput = document.getElementById('colorInput');
-            const colorPreview = document.getElementById('colorPreview');
-            const hexValue = document.getElementById('hexValue');
-            const rgbValue = document.getElementById('rgbValue');
-            const hslValue = document.getElementById('hslValue');
-            
-            colorInput.addEventListener('input', updateColor);
-            
-            function updateColor() {
-                const color = colorInput.value;
-                colorPreview.style.backgroundColor = color;
-                hexValue.textContent = color;
-                
-                // Convert hex to RGB
-                const r = parseInt(color.substr(1, 2), 16);
-                const g = parseInt(color.substr(3, 2), 16);
-                const b = parseInt(color.substr(5, 2), 16);
-                rgbValue.textContent = `rgb(${r}, ${g}, ${b})`;
-                
-                // Convert RGB to HSL
-                const hsl = rgbToHsl(r, g, b);
-                hslValue.textContent = `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)`;
-            }
-            
-            function rgbToHsl(r, g, b) {
-                r /= 255, g /= 255, b /= 255;
-                const max = Math.max(r, g, b), min = Math.min(r, g, b);
-                let h, s, l = (max + min) / 2;
-            
-                if (max === min) {
-                    h = s = 0; // achromatic
-                } else {
-                    const d = max - min;
-                    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-                    switch(max) {
-                        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-                        case g: h = (b - r) / d + 2; break;
-                        case b: h = (r - g) / d + 4; break;
-                    }
-                    h *= 60;
-                }
-            
-                return [Math.round(h), Math.round(s * 100), Math.round(l * 100)];
-            }
-            
-            // Initial update
-            updateColor();
-        }
-
-        // Base64 Converter
-        function initBase64Converter() {
-            const base64Input = document.getElementById('base64Input');
-            const encodeBtn = document.getElementById('encodeBtn');
-            const decodeBtn = document.getElementById('decodeBtn');
-            const resultEl = document.getElementById('base64Result');
-            const copyBtn = document.getElementById('copyBase64Btn');
-            
-            encodeBtn.addEventListener('click', encodeBase64);
-            decodeBtn.addEventListener('click', decodeBase64);
-            copyBtn.addEventListener('click', copyBase64);
-            
-            function encodeBase64() {
-                const text = base64Input.value;
-                if (!text) {
-                    showNotification('Please enter text to encode');
-                    return;
-                }
-                resultEl.textContent = btoa(unescape(encodeURIComponent(text)));
-            }
-            
-            function decodeBase64() {
-                const text = base64Input.value;
-                if (!text) {
-                    showNotification('Please enter base64 to decode');
-                    return;
-                }
-                try {
-                    resultEl.textContent = decodeURIComponent(escape(atob(text)));
-                } catch (e) {
-                    showNotification('Invalid Base64 input');
-                    resultEl.textContent = 'Error: Invalid Base64 input';
-                }
-            }
-            
-            function copyBase64() {
-                const textarea = document.createElement('textarea');
-                textarea.value = resultEl.textContent;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showNotification('Copied to clipboard!');
-            }
-        }
-
-        // EMI Calculator
-        function initEmiCalculator() {
-            const calculateBtn = document.getElementById('calculateEmiBtn');
-            const emiResult = document.getElementById('emiResult');
-            const totalInterest = document.getElementById('totalInterest');
-            const totalPayment = document.getElementById('totalPayment');
-            
-            calculateBtn.addEventListener('click', calculateEmi);
-            
-            function calculateEmi() {
-                const loanAmount = parseFloat(document.getElementById('loanAmount').value);
-                const interestRate = parseFloat(document.getElementById('interestRate').value);
-                const loanTerm = parseFloat(document.getElementById('loanTerm').value);
-                
-                if (!loanAmount || !interestRate || !loanTerm || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
-                    showNotification('Please enter valid values');
-                    return;
-                }
-                
-                // Monthly interest rate
-                const monthlyRate = interestRate / 100 / 12;
-                
-                // Number of payments
-                const payments = loanTerm * 12;
-                
-                // EMI calculation
-                const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, payments)) / 
-                             (Math.pow(1 + monthlyRate, payments) - 1);
-                
-                // Total payment and interest
-                const total = emi * payments;
-                const interest = total - loanAmount;
-                
-                emiResult.textContent = `$${emi.toFixed(2)}`;
-                totalInterest.textContent = `$${interest.toFixed(2)}`;
-                totalPayment.textContent = `$${total.toFixed(2)}`;
+                setTimeout(() => {
+                    const recipes = aiContent.recipe;
+                    const randomRecipe = recipes[Math.floor(Math.random() * recipes.length)];
+                    
+                    thinkingEl.style.display = 'none';
+                    resultEl.innerHTML = `<pre>${randomRecipe}</pre>`;
+                    showNotification('Recipe generated successfully!');
+                }, 2500);
             }
         }
 

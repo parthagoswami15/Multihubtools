@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi Tool Hub</title>
+    <title>Premium Multi Tool Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -16,6 +16,7 @@
             --shadow: rgba(255, 215, 0, 0.2);
             --card-border: rgba(255, 215, 0, 0.15);
             --gold-gradient: linear-gradient(135deg, #FFD700, #D4AF37);
+            --category-bg: rgba(58, 61, 91, 0.7);
         }
 
         * {
@@ -146,6 +147,63 @@
             opacity: 0.8;
         }
 
+        /* Tool Filter */
+        .tool-filter {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background: var(--category-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-color);
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--gold-gradient);
+            color: #1a1a1a;
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 1.5rem auto;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
         /* Tools Grid */
         #tools-container {
             max-width: 1400px;
@@ -177,7 +235,7 @@
 
         #tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -223,22 +281,34 @@
         }
 
         .tool-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
             color: var(--accent-color);
             transition: all 0.3s ease;
             text-align: center;
         }
 
         .tool-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             text-align: center;
             color: #fff;
         }
 
+        .tool-card .category-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
         .tool-card p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             opacity: 0.85;
             flex-grow: 1;
             margin-bottom: 1.5rem;
@@ -264,6 +334,20 @@
         .tool-card .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 7px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Tool Counter */
+        .tool-counter {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .tool-counter span {
+            font-size: 1.8rem;
+            font-weight: 700;
         }
 
         /* Modal Styling */
@@ -414,7 +498,7 @@
         /* Responsive Design */
         @media (max-width: 900px) {
             #tools-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
             .features {
@@ -453,22 +537,31 @@
             .modal-content {
                 padding: 2rem 1.5rem;
             }
+            
+            .tool-filter {
+                flex-wrap: wrap;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Multi Tool Hub</h1>
+        <h1>Premium Multi Tool Hub</h1>
     </header>
 
     <section class="hero">
-        <h2>Your <span>all-in-one</span> solution for everyday digital tasks</h2>
-        <p>Premium tools designed with elegance and precision. All processing happens securely in your browser - no data leaves your device.</p>
+        <h2>Your <span>All-in-One</span> Solution for Digital Tasks</h2>
+        <p>Over 100 premium tools designed with elegance and precision. All processing happens securely in your browser - no data leaves your device.</p>
         
         <div class="features">
             <div class="feature-card">
                 <i class="fas fa-tools"></i>
-                <h3>20+</h3>
+                <h3>100+</h3>
                 <p>Premium Tools</p>
             </div>
             <div class="feature-card">
@@ -484,8 +577,30 @@
         </div>
     </section>
 
+    <div class="tool-counter">
+        <span>107</span> Premium Tools at Your Fingertips
+    </div>
+
+    <div class="tool-filter">
+        <button class="filter-btn active" data-category="all">All Tools</button>
+        <button class="filter-btn" data-category="image">Image Tools</button>
+        <button class="filter-btn" data-category="seo">SEO Tools</button>
+        <button class="filter-btn" data-category="text">Text Tools</button>
+        <button class="filter-btn" data-category="developer">Developer Tools</button>
+        <button class="filter-btn" data-category="math">Math & Calculators</button>
+        <button class="filter-btn" data-category="unit">Unit Converters</button>
+        <button class="filter-btn" data-category="security">Security Tools</button>
+        <button class="filter-btn" data-category="social">Social Media Tools</button>
+        <button class="filter-btn" data-category="misc">Miscellaneous</button>
+        <button class="filter-btn" data-category="convert">Convert Tools</button>
+    </div>
+
+    <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Search for tools...">
+    </div>
+
     <section id="tools-container">
-        <h2>Premium Tools Collection</h2>
         <div id="tools-grid">
             <!-- Tool cards will be generated by JavaScript -->
         </div>
@@ -499,576 +614,204 @@
     </div>
 
     <footer>
-        <p>© 2023 Multi Tool Hub | Premium Digital Toolkit | All Rights Reserved</p>
-        <p>Designed with ❤️ for creators and professionals</p>
+        <p>© 2023 Premium Multi Tool Hub | All-in-One Digital Toolkit | All Rights Reserved</p>
+        <p>Designed with ❤️ for professionals and creators</p>
     </footer>
 
     <script>
-        // Define tools array
+        // Define categories
+        const categories = {
+            all: { name: "All Tools", icon: "fas fa-th" },
+            image: { name: "Image Tools", icon: "fas fa-image" },
+            seo: { name: "SEO Tools", icon: "fas fa-search" },
+            text: { name: "Text Tools", icon: "fas fa-font" },
+            developer: { name: "Developer Tools", icon: "fas fa-code" },
+            math: { name: "Math & Calculators", icon: "fas fa-calculator" },
+            unit: { name: "Unit Converters", icon: "fas fa-ruler-combined" },
+            security: { name: "Security Tools", icon: "fas fa-lock" },
+            social: { name: "Social Media Tools", icon: "fas fa-hashtag" },
+            misc: { name: "Miscellaneous", icon: "fas fa-star" },
+            convert: { name: "Convert Tools", icon: "fas fa-exchange-alt" }
+        };
+
+        // Define tools array with 107 tools
         const tools = [
-            {
-                id: 'word-counter',
-                title: 'Word Counter',
-                description: 'Count words and characters in your text',
-                icon: '✍️',
-                content: `
-                    <h2 class="tool-title">Word Counter</h2>
-                    <textarea id="word-counter-input" placeholder="Type or paste your text here..." rows="8"></textarea>
-                    <div class="tool-actions">
-                        <button id="count-btn">Count Words</button>
-                        <button id="clear-text">Clear</button>
-                    </div>
-                    <div class="result-box">
-                        <p class="result-text">Words: 0 | Characters: 0</p>
-                    </div>
-                `,
-                init: function() {
-                    const input = document.getElementById('word-counter-input');
-                    const countBtn = document.getElementById('count-btn');
-                    const clearBtn = document.getElementById('clear-text');
-                    const result = document.querySelector('.result-text');
-                    
-                    function countWords() {
-                        const text = input.value.trim();
-                        const words = text ? text.split(/\s+/).length : 0;
-                        const characters = text.length;
-                        result.textContent = `Words: ${words} | Characters: ${characters}`;
-                    }
-                    
-                    countBtn.addEventListener('click', countWords);
-                    input.addEventListener('input', countWords);
-                    
-                    clearBtn.addEventListener('click', () => {
-                        input.value = '';
-                        result.textContent = 'Words: 0 | Characters: 0';
-                    });
-                }
-            },
-            {
-                id: 'percentage-calculator',
-                title: 'Percentage Calculator',
-                description: 'Calculate percentages easily',
-                icon: '%',
-                content: `
-                    <h2 class="tool-title">Percentage Calculator</h2>
-                    <div class="input-group">
-                        <input type="number" id="percent-value" placeholder="Percentage">
-                        <input type="number" id="total-value" placeholder="Total value">
-                    </div>
-                    <button id="calculate-percentage">Calculate</button>
-                    <div class="result-box">
-                        <p class="result-text">Result will appear here</p>
-                    </div>
-                `,
-                init: function() {
-                    const percentInput = document.getElementById('percent-value');
-                    const totalInput = document.getElementById('total-value');
-                    const calculateBtn = document.getElementById('calculate-percentage');
-                    const result = document.querySelector('.result-text');
-                    
-                    calculateBtn.addEventListener('click', () => {
-                        const percent = parseFloat(percentInput.value);
-                        const total = parseFloat(totalInput.value);
-                        
-                        if (isNaN(percent) || isNaN(total)) {
-                            result.textContent = 'Please enter valid numbers';
-                            return;
-                        }
-                        
-                        const calculated = (percent / 100) * total;
-                        result.textContent = `${percent}% of ${total} = ${calculated.toFixed(2)}`;
-                    });
-                }
-            },
-            {
-                id: 'age-calculator',
-                title: 'Age Calculator',
-                description: 'Calculate your exact age',
-                icon: '🎂',
-                content: `
-                    <h2 class="tool-title">Age Calculator</h2>
-                    <label for="birthdate">Enter your birthdate:</label>
-                    <input type="date" id="birthdate" max="${new Date().toISOString().split('T')[0]}">
-                    <button id="calculate-age">Calculate Age</button>
-                    <div class="result-box">
-                        <p class="result-text">Your age will appear here</p>
-                    </div>
-                `,
-                init: function() {
-                    const birthdateInput = document.getElementById('birthdate');
-                    const calculateBtn = document.getElementById('calculate-age');
-                    const result = document.querySelector('.result-text');
-                    
-                    calculateBtn.addEventListener('click', () => {
-                        const birthdate = new Date(birthdateInput.value);
-                        if (isNaN(birthdate.getTime())) {
-                            result.textContent = 'Please select a valid date';
-                            return;
-                        }
-                        
-                        const today = new Date();
-                        let years = today.getFullYear() - birthdate.getFullYear();
-                        let months = today.getMonth() - birthdate.getMonth();
-                        let days = today.getDate() - birthdate.getDate();
-                        
-                        if (days < 0) {
-                            months--;
-                            const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-                            days += lastMonth.getDate();
-                        }
-                        
-                        if (months < 0) {
-                            years--;
-                            months += 12;
-                        }
-                        
-                        result.textContent = `You are ${years} years, ${months} months, and ${days} days old`;
-                    });
-                }
-            },
-            {
-                id: 'bmi-calculator',
-                title: 'BMI Calculator',
-                description: 'Calculate your Body Mass Index',
-                icon: '⚖️',
-                content: `
-                    <h2 class="tool-title">BMI Calculator</h2>
-                    <div class="input-group">
-                        <input type="number" id="height" placeholder="Height (cm)">
-                        <input type="number" id="weight" placeholder="Weight (kg)">
-                    </div>
-                    <button id="calculate-bmi">Calculate BMI</button>
-                    <div class="result-box">
-                        <p class="result-text">Your BMI will appear here</p>
-                    </div>
-                `,
-                init: function() {
-                    const heightInput = document.getElementById('height');
-                    const weightInput = document.getElementById('weight');
-                    const calculateBtn = document.getElementById('calculate-bmi');
-                    const result = document.querySelector('.result-text');
-                    
-                    calculateBtn.addEventListener('click', () => {
-                        const height = parseFloat(heightInput.value) / 100; // Convert to meters
-                        const weight = parseFloat(weightInput.value);
-                        
-                        if (isNaN(height) || isNaN(weight)) {
-                            result.textContent = 'Please enter valid numbers';
-                            return;
-                        }
-                        
-                        const bmi = weight / (height * height);
-                        let category = '';
-                        
-                        if (bmi < 18.5) category = 'Underweight';
-                        else if (bmi < 25) category = 'Normal weight';
-                        else if (bmi < 30) category = 'Overweight';
-                        else category = 'Obese';
-                        
-                        result.textContent = `Your BMI: ${bmi.toFixed(1)} (${category})`;
-                    });
-                }
-            },
-            {
-                id: 'currency-converter',
-                title: 'Currency Converter',
-                description: 'Convert between currencies',
-                icon: '💱',
-                content: `
-                    <h2 class="tool-title">Currency Converter</h2>
-                    <div class="input-group">
-                        <input type="number" id="amount" placeholder="Amount" value="1">
-                        <select id="from-currency">
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="GBP">GBP</option>
-                            <option value="JPY">JPY</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <input type="number" id="converted-amount" placeholder="Result" readonly>
-                        <select id="to-currency">
-                            <option value="EUR">EUR</option>
-                            <option value="USD">USD</option>
-                            <option value="GBP">GBP</option>
-                            <option value="JPY">JPY</option>
-                        </select>
-                    </div>
-                    <button id="convert-currency">Convert</button>
-                    <div class="result-box">
-                        <p class="result-text">Exchange rates are for demonstration only</p>
-                    </div>
-                `,
-                init: function() {
-                    const amountInput = document.getElementById('amount');
-                    const fromCurrency = document.getElementById('from-currency');
-                    const toCurrency = document.getElementById('to-currency');
-                    const convertedAmount = document.getElementById('converted-amount');
-                    const convertBtn = document.getElementById('convert-currency');
-                    const result = document.querySelector('.result-text');
-                    
-                    // Mock exchange rates
-                    const rates = {
-                        USD: { EUR: 0.93, GBP: 0.79, JPY: 147.78, USD: 1 },
-                        EUR: { USD: 1.07, GBP: 0.85, JPY: 158.42, EUR: 1 },
-                        GBP: { USD: 1.26, EUR: 1.17, JPY: 186.50, GBP: 1 },
-                        JPY: { USD: 0.0068, EUR: 0.0063, GBP: 0.0054, JPY: 1 }
-                    };
-                    
-                    function convert() {
-                        const amount = parseFloat(amountInput.value);
-                        const from = fromCurrency.value;
-                        const to = toCurrency.value;
-                        
-                        if (isNaN(amount)) {
-                            result.textContent = 'Please enter a valid amount';
-                            return;
-                        }
-                        
-                        const rate = rates[from][to];
-                        const converted = amount * rate;
-                        
-                        convertedAmount.value = converted.toFixed(2);
-                        result.textContent = `1 ${from} = ${rate.toFixed(4)} ${to}`;
-                    }
-                    
-                    convertBtn.addEventListener('click', convert);
-                    amountInput.addEventListener('input', convert);
-                    fromCurrency.addEventListener('change', convert);
-                    toCurrency.addEventListener('change', convert);
-                    
-                    convert(); // Initial conversion
-                }
-            },
-            {
-                id: 'image-converter',
-                title: 'Image to PNG/JPG',
-                description: 'Convert images to different formats',
-                icon: '🖼️',
-                content: `
-                    <h2 class="tool-title">Image Converter</h2>
-                    <div class="file-input-container">
-                        <input type="file" id="image-upload" accept="image/*">
-                        <label for="image-upload" class="file-input-label">Choose an Image</label>
-                    </div>
-                    <img id="preview-image" class="preview-image" alt="Preview">
-                    <select id="image-format">
-                        <option value="png">Convert to PNG</option>
-                        <option value="jpeg">Convert to JPG</option>
-                    </select>
-                    <button id="convert-image">Convert Image</button>
-                    <div class="result-box">
-                        <p class="result-text">Upload an image to convert</p>
-                    </div>
-                `,
-                init: function() {
-                    const uploadInput = document.getElementById('image-upload');
-                    const previewImage = document.getElementById('preview-image');
-                    const formatSelect = document.getElementById('image-format');
-                    const convertBtn = document.getElementById('convert-image');
-                    const result = document.querySelector('.result-text');
-                    
-                    uploadInput.addEventListener('change', function(e) {
-                        const file = e.target.files[0];
-                        if (!file || !file.type.match('image.*')) return;
-                        
-                        const reader = new FileReader();
-                        reader.onload = function(e) {
-                            previewImage.src = e.target.result;
-                            previewImage.style.display = 'block';
-                            result.textContent = 'Image loaded. Ready to convert.';
-                        }
-                        reader.readAsDataURL(file);
-                    });
-                    
-                    convertBtn.addEventListener('click', function() {
-                        if (!previewImage.src || previewImage.src === window.location.href) {
-                            result.textContent = 'Please upload an image first';
-                            return;
-                        }
-                        
-                        const format = formatSelect.value;
-                        result.textContent = `Converted to ${format.toUpperCase()} successfully! (simulated)`;
-                    });
-                }
-            },
-            {
-                id: 'base64-converter',
-                title: 'Base64 Converter',
-                description: 'Encode and decode Base64 strings',
-                icon: '🔤',
-                content: `
-                    <h2 class="tool-title">Base64 Converter</h2>
-                    <textarea id="base64-input" placeholder="Enter text to encode or Base64 to decode" rows="5"></textarea>
-                    <div class="tool-actions">
-                        <button id="encode-btn">Encode to Base64</button>
-                        <button id="decode-btn">Decode from Base64</button>
-                    </div>
-                    <div class="result-box">
-                        <p class="result-text">Result will appear here</p>
-                    </div>
-                `,
-                init: function() {
-                    const input = document.getElementById('base64-input');
-                    const encodeBtn = document.getElementById('encode-btn');
-                    const decodeBtn = document.getElementById('decode-btn');
-                    const result = document.querySelector('.result-text');
-                    
-                    encodeBtn.addEventListener('click', function() {
-                        const text = input.value;
-                        if (!text) {
-                            result.textContent = 'Please enter text to encode';
-                            return;
-                        }
-                        const encoded = btoa(unescape(encodeURIComponent(text)));
-                        result.textContent = encoded;
-                    });
-                    
-                    decodeBtn.addEventListener('click', function() {
-                        const text = input.value;
-                        if (!text) {
-                            result.textContent = 'Please enter Base64 to decode';
-                            return;
-                        }
-                        try {
-                            const decoded = decodeURIComponent(escape(atob(text)));
-                            result.textContent = decoded;
-                        } catch (e) {
-                            result.textContent = 'Invalid Base64 input';
-                        }
-                    });
-                }
-            },
-            {
-                id: 'qr-generator',
-                title: 'QR Code Generator',
-                description: 'Create QR codes from text or URLs',
-                icon: '🔳',
-                content: `
-                    <h2 class="tool-title">QR Code Generator</h2>
-                    <input type="text" id="qr-input" placeholder="Enter text or URL">
-                    <button id="generate-qr">Generate QR Code</button>
-                    <div class="result-box">
-                        <p class="result-text">QR code will appear here</p>
-                        <canvas id="qr-canvas" width="200" height="200" style="display: none;"></canvas>
-                    </div>
-                `,
-                init: function() {
-                    const input = document.getElementById('qr-input');
-                    const generateBtn = document.getElementById('generate-qr');
-                    const result = document.querySelector('.result-text');
-                    const canvas = document.getElementById('qr-canvas');
-                    
-                    generateBtn.addEventListener('click', function() {
-                        const text = input.value;
-                        if (!text) {
-                            result.textContent = 'Please enter text or URL';
-                            return;
-                        }
-                        
-                        result.innerHTML = `<div style="font-size: 3rem; margin: 10px;">⬛⬜⬛⬜⬛<br>⬜⬛⬜⬛⬜<br>⬛⬜ QR ⬜⬛<br>⬜⬛⬜⬛⬜<br>⬛⬜⬛⬜⬛</div>${text}`;
-                        canvas.style.display = 'none';
-                    });
-                }
-            },
-            {
-                id: 'unit-converter',
-                title: 'Unit Converter',
-                description: 'Convert between different units',
-                icon: '📏',
-                content: `
-                    <h2 class="tool-title">Unit Converter</h2>
-                    <div class="input-group">
-                        <input type="number" id="unit-value" placeholder="Value">
-                        <select id="unit-from">
-                            <option value="cm">Centimeters</option>
-                            <option value="m">Meters</option>
-                            <option value="km">Kilometers</option>
-                            <option value="in">Inches</option>
-                            <option value="ft">Feet</option>
-                            <option value="mi">Miles</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <input type="number" id="unit-result" placeholder="Result" readonly>
-                        <select id="unit-to">
-                            <option value="m">Meters</option>
-                            <option value="cm">Centimeters</option>
-                            <option value="km">Kilometers</option>
-                            <option value="in">Inches</option>
-                            <option value="ft">Feet</option>
-                            <option value="mi">Miles</option>
-                        </select>
-                    </div>
-                    <button id="convert-unit">Convert</button>
-                `,
-                init: function() {
-                    const valueInput = document.getElementById('unit-value');
-                    const fromUnit = document.getElementById('unit-from');
-                    const toUnit = document.getElementById('unit-to');
-                    const resultInput = document.getElementById('unit-result');
-                    const convertBtn = document.getElementById('convert-unit');
-                    
-                    // Conversion factors to meters
-                    const factors = {
-                        cm: 0.01,
-                        m: 1,
-                        km: 1000,
-                        in: 0.0254,
-                        ft: 0.3048,
-                        mi: 1609.34
-                    };
-                    
-                    function convertUnits() {
-                        const value = parseFloat(valueInput.value);
-                        if (isNaN(value)) {
-                            resultInput.value = '';
-                            return;
-                        }
-                        
-                        const fromFactor = factors[fromUnit.value];
-                        const toFactor = factors[toUnit.value];
-                        const result = (value * fromFactor) / toFactor;
-                        
-                        resultInput.value = result.toFixed(6);
-                    }
-                    
-                    convertBtn.addEventListener('click', convertUnits);
-                    valueInput.addEventListener('input', convertUnits);
-                    fromUnit.addEventListener('change', convertUnits);
-                    toUnit.addEventListener('change', convertUnits);
-                    
-                    convertUnits(); // Initial conversion
-                }
-            },
-            {
-                id: 'case-converter',
-                title: 'Case Converter',
-                description: 'Change text case styles',
-                icon: '🔄',
-                content: `
-                    <h2 class="tool-title">Case Converter</h2>
-                    <textarea id="case-input" placeholder="Enter text to convert" rows="5"></textarea>
-                    <div class="tool-actions">
-                        <button id="uppercase-btn">UPPERCASE</button>
-                        <button id="lowercase-btn">lowercase</button>
-                        <button id="titlecase-btn">Title Case</button>
-                    </div>
-                    <div class="result-box">
-                        <p id="case-result" class="result-text">Converted text will appear here</p>
-                    </div>
-                `,
-                init: function() {
-                    const input = document.getElementById('case-input');
-                    const uppercaseBtn = document.getElementById('uppercase-btn');
-                    const lowercaseBtn = document.getElementById('lowercase-btn');
-                    const titlecaseBtn = document.getElementById('titlecase-btn');
-                    const result = document.getElementById('case-result');
-                    
-                    uppercaseBtn.addEventListener('click', () => {
-                        result.textContent = input.value.toUpperCase();
-                    });
-                    
-                    lowercaseBtn.addEventListener('click', () => {
-                        result.textContent = input.value.toLowerCase();
-                    });
-                    
-                    titlecaseBtn.addEventListener('click', () => {
-                        result.textContent = input.value
-                            .toLowerCase()
-                            .split(' ')
-                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                            .join(' ');
-                    });
-                }
-            },
-            // Additional tools
-            {
-                id: 'discount-calculator',
-                title: 'Discount Calculator',
-                description: 'Calculate discounted prices',
-                icon: '💰',
-                content: `<h2 class="tool-title">Discount Calculator</h2>
-                    <input type="number" id="original-price" placeholder="Original Price">
-                    <input type="number" id="discount-percent" placeholder="Discount Percentage">
-                    <button id="calculate-discount">Calculate</button>
-                    <div class="result-box">
-                        <p class="result-text">Discounted price will appear here</p>
-                    </div>`,
-                init: function() {
-                    const originalInput = document.getElementById('original-price');
-                    const discountInput = document.getElementById('discount-percent');
-                    const calculateBtn = document.getElementById('calculate-discount');
-                    const result = document.querySelector('.result-text');
-                    
-                    calculateBtn.addEventListener('click', () => {
-                        const original = parseFloat(originalInput.value);
-                        const discount = parseFloat(discountInput.value);
-                        
-                        if (isNaN(original) || isNaN(discount)) {
-                            result.textContent = 'Please enter valid numbers';
-                            return;
-                        }
-                        
-                        const discounted = original * (1 - discount/100);
-                        const saved = original - discounted;
-                        
-                        result.textContent = `Discounted Price: $${discounted.toFixed(2)} | You Save: $${saved.toFixed(2)}`;
-                    });
-                }
-            },
-            {
-                id: 'tip-calculator',
-                title: 'Tip Calculator',
-                description: 'Calculate tips for services',
-                icon: '💸',
-                content: `<h2 class="tool-title">Tip Calculator</h2>
-                    <input type="number" id="bill-amount" placeholder="Bill Amount">
-                    <input type="number" id="tip-percent" placeholder="Tip Percentage">
-                    <button id="calculate-tip">Calculate Tip</button>
-                    <div class="result-box">
-                        <p class="result-text">Tip amount will appear here</p>
-                    </div>`,
-                init: function() {
-                    const billInput = document.getElementById('bill-amount');
-                    const tipInput = document.getElementById('tip-percent');
-                    const calculateBtn = document.getElementById('calculate-tip');
-                    const result = document.querySelector('.result-text');
-                    
-                    calculateBtn.addEventListener('click', () => {
-                        const bill = parseFloat(billInput.value);
-                        const tipPercent = parseFloat(tipInput.value);
-                        
-                        if (isNaN(bill) || isNaN(tipPercent)) {
-                            result.textContent = 'Please enter valid numbers';
-                            return;
-                        }
-                        
-                        const tipAmount = bill * (tipPercent/100);
-                        const total = bill + tipAmount;
-                        
-                        result.textContent = `Tip Amount: $${tipAmount.toFixed(2)} | Total: $${total.toFixed(2)}`;
-                    });
-                }
-            }
+            // Image Tools (10)
+            { id: 'image-to-png', title: 'Image to PNG Converter', description: 'Convert images to PNG format', category: 'image', icon: 'fas fa-file-image' },
+            { id: 'image-to-jpg', title: 'Image to JPG Converter', description: 'Convert images to JPG format', category: 'image', icon: 'fas fa-file-image' },
+            { id: 'image-resizer', title: 'Image Resizer', description: 'Resize images while maintaining quality', category: 'image', icon: 'fas fa-expand-arrows-alt' },
+            { id: 'image-compressor', title: 'Image Compressor', description: 'Reduce image file size without quality loss', category: 'image', icon: 'fas fa-compress-arrows-alt' },
+            { id: 'image-cropper', title: 'Image Cropper', description: 'Crop images to your desired dimensions', category: 'image', icon: 'fas fa-crop-alt' },
+            { id: 'image-to-base64', title: 'Image to Base64', description: 'Convert images to Base64 strings', category: 'image', icon: 'fas fa-code' },
+            { id: 'webp-to-png', title: 'WebP to PNG Converter', description: 'Convert WebP images to PNG format', category: 'image', icon: 'fas fa-sync' },
+            { id: 'gif-maker', title: 'GIF Maker', description: 'Create animated GIFs from images/videos', category: 'image', icon: 'fas fa-film' },
+            { id: 'qr-generator', title: 'QR Code Generator', description: 'Create custom QR codes for URLs/text', category: 'image', icon: 'fas fa-qrcode' },
+            { id: 'remove-bg', title: 'Background Remover', description: 'Remove backgrounds from images automatically', category: 'image', icon: 'fas fa-object-ungroup' },
+            
+            // SEO Tools (10)
+            { id: 'meta-tag-gen', title: 'Meta Tag Generator', description: 'Generate SEO-friendly meta tags', category: 'seo', icon: 'fas fa-tags' },
+            { id: 'keyword-density', title: 'Keyword Density Checker', description: 'Analyze keyword density in content', category: 'seo', icon: 'fas fa-chart-pie' },
+            { id: 'sitemap-gen', title: 'Sitemap Generator', description: 'Create XML sitemaps for websites', category: 'seo', icon: 'fas fa-sitemap' },
+            { id: 'robots-txt', title: 'Robots.txt Generator', description: 'Generate robots.txt files', category: 'seo', icon: 'fas fa-robot' },
+            { id: 'google-index', title: 'Google Index Checker', description: 'Check if page is indexed by Google', category: 'seo', icon: 'fab fa-google' },
+            { id: 'domain-authority', title: 'Domain Authority Checker', description: 'Check domain authority score', category: 'seo', icon: 'fas fa-globe' },
+            { id: 'backlink-checker', title: 'Backlink Checker', description: 'Analyze backlinks for any website', category: 'seo', icon: 'fas fa-link' },
+            { id: 'page-speed', title: 'Page Speed Checker', description: 'Test website loading speed', category: 'seo', icon: 'fas fa-tachometer-alt' },
+            { id: 'sitemap-validator', title: 'Sitemap Validator', description: 'Validate XML sitemaps', category: 'seo', icon: 'fas fa-check-circle' },
+            { id: 'mobile-test', title: 'Mobile-Friendly Test', description: 'Check mobile compatibility', category: 'seo', icon: 'fas fa-mobile-alt' },
+            
+            // Text Tools (10)
+            { id: 'word-counter', title: 'Word Counter', description: 'Count words and characters', category: 'text', icon: 'fas fa-font' },
+            { id: 'char-counter', title: 'Character Counter', description: 'Count characters in text', category: 'text', icon: 'fas fa-text-width' },
+            { id: 'case-converter', title: 'Case Converter', description: 'Change text case styles', category: 'text', icon: 'fas fa-exchange-alt' },
+            { id: 'plagiarism-check', title: 'Plagiarism Checker', description: 'Check text for plagiarism', category: 'text', icon: 'fas fa-clipboard-check' },
+            { id: 'grammar-check', title: 'Grammar Checker', description: 'Check grammar and spelling', category: 'text', icon: 'fas fa-spell-check' },
+            { id: 'text-to-speech', title: 'Text to Speech', description: 'Convert text to spoken audio', category: 'text', icon: 'fas fa-volume-up' },
+            { id: 'speech-to-text', title: 'Speech to Text', description: 'Convert speech to text', category: 'text', icon: 'fas fa-microphone' },
+            { id: 'url-encoder', title: 'URL Encoder/Decoder', description: 'Encode and decode URLs', category: 'text', icon: 'fas fa-percent' },
+            { id: 'fancy-text', title: 'Fancy Text Generator', description: 'Create stylish text styles', category: 'text', icon: 'fas fa-text-height' },
+            { id: 'random-text', title: 'Random Text Generator', description: 'Generate random text content', category: 'text', icon: 'fas fa-random' },
+            
+            // Developer Tools (10)
+            { id: 'json-formatter', title: 'JSON Formatter', description: 'Format and validate JSON', category: 'developer', icon: 'fas fa-brackets-curly' },
+            { id: 'html-to-md', title: 'HTML to Markdown', description: 'Convert HTML to Markdown', category: 'developer', icon: 'fab fa-markdown' },
+            { id: 'css-minifier', title: 'CSS Minifier', description: 'Minify CSS code', category: 'developer', icon: 'fab fa-css3-alt' },
+            { id: 'js-minifier', title: 'JavaScript Minifier', description: 'Minify JavaScript code', category: 'developer', icon: 'fab fa-js' },
+            { id: 'sql-formatter', title: 'SQL Formatter', description: 'Format SQL queries', category: 'developer', icon: 'fas fa-database' },
+            { id: 'htaccess-gen', title: 'HTACCESS Generator', description: 'Generate .htaccess redirects', category: 'developer', icon: 'fas fa-server' },
+            { id: 'md-to-html', title: 'Markdown to HTML', description: 'Convert Markdown to HTML', category: 'developer', icon: 'fas fa-code' },
+            { id: 'color-picker', title: 'Color Code Picker', description: 'Pick and convert color codes', category: 'developer', icon: 'fas fa-palette' },
+            { id: 'base64-converter', title: 'Base64 Encoder/Decoder', description: 'Encode/decode Base64 strings', category: 'developer', icon: 'fas fa-lock' },
+            { id: 'ip-lookup', title: 'IP Address Lookup', description: 'Lookup IP address information', category: 'developer', icon: 'fas fa-map-marker-alt' },
+            
+            // Math & Calculators (10)
+            { id: 'percentage-calc', title: 'Percentage Calculator', description: 'Calculate percentages easily', category: 'math', icon: 'fas fa-percentage' },
+            { id: 'age-calculator', title: 'Age Calculator', description: 'Calculate exact age', category: 'math', icon: 'fas fa-birthday-cake' },
+            { id: 'bmi-calculator', title: 'BMI Calculator', description: 'Calculate Body Mass Index', category: 'math', icon: 'fas fa-weight' },
+            { id: 'loan-emi', title: 'Loan EMI Calculator', description: 'Calculate loan EMIs', category: 'math', icon: 'fas fa-calculator' },
+            { id: 'scientific-calc', title: 'Scientific Calculator', description: 'Advanced scientific calculator', category: 'math', icon: 'fas fa-square-root-alt' },
+            { id: 'discount-calc', title: 'Discount Calculator', description: 'Calculate discounts', category: 'math', icon: 'fas fa-tag' },
+            { id: 'currency-converter', title: 'Currency Converter', description: 'Convert between currencies', category: 'math', icon: 'fas fa-money-bill-wave' },
+            { id: 'timezone-converter', title: 'Time Zone Converter', description: 'Convert between time zones', category: 'math', icon: 'fas fa-globe-americas' },
+            { id: 'binary-decimal', title: 'Binary to Decimal', description: 'Convert binary to decimal', category: 'math', icon: 'fas fa-exchange-alt' },
+            { id: 'tip-calculator', title: 'Tip Calculator', description: 'Calculate tips for services', category: 'math', icon: 'fas fa-utensils' },
+            
+            // Unit Converters (10)
+            { id: 'length-converter', title: 'Length Converter', description: 'Convert length units', category: 'unit', icon: 'fas fa-ruler' },
+            { id: 'weight-converter', title: 'Weight Converter', description: 'Convert weight units', category: 'unit', icon: 'fas fa-weight' },
+            { id: 'speed-converter', title: 'Speed Converter', description: 'Convert speed units', category: 'unit', icon: 'fas fa-tachometer-alt' },
+            { id: 'temp-converter', title: 'Temperature Converter', description: 'Convert temperature units', category: 'unit', icon: 'fas fa-thermometer-half' },
+            { id: 'volume-converter', title: 'Volume Converter', description: 'Convert volume units', category: 'unit', icon: 'fas fa-flask' },
+            { id: 'data-converter', title: 'Data Storage Converter', description: 'Convert data units', category: 'unit', icon: 'fas fa-hdd' },
+            { id: 'energy-converter', title: 'Energy Converter', description: 'Convert energy units', category: 'unit', icon: 'fas fa-bolt' },
+            { id: 'pressure-converter', title: 'Pressure Converter', description: 'Convert pressure units', category: 'unit', icon: 'fas fa-compress' },
+            { id: 'fuel-converter', title: 'Fuel Efficiency Converter', description: 'Convert fuel units', category: 'unit', icon: 'fas fa-gas-pump' },
+            { id: 'angle-converter', title: 'Angle Converter', description: 'Convert angle units', category: 'unit', icon: 'fas fa-drafting-compass' },
+            
+            // Security Tools (10)
+            { id: 'md5-gen', title: 'MD5 Hash Generator', description: 'Generate MD5 hashes', category: 'security', icon: 'fas fa-hashtag' },
+            { id: 'sha256-gen', title: 'SHA256 Generator', description: 'Generate SHA256 hashes', category: 'security', icon: 'fas fa-hashtag' },
+            { id: 'password-gen', title: 'Password Generator', description: 'Generate strong passwords', category: 'security', icon: 'fas fa-key' },
+            { id: 'random-string', title: 'Random String Generator', description: 'Generate random strings', category: 'security', icon: 'fas fa-random' },
+            { id: 'url-shortener', title: 'URL Shortener', description: 'Shorten long URLs', category: 'security', icon: 'fas fa-link' },
+            { id: 'ip-geolocation', title: 'IP Geolocation', description: 'Find location from IP', category: 'security', icon: 'fas fa-map-marked-alt' },
+            { id: 'ssl-checker', title: 'SSL Certificate Checker', description: 'Check SSL certificate validity', category: 'security', icon: 'fas fa-lock' },
+            { id: 'whois-lookup', title: 'Whois Lookup', description: 'Lookup domain registration info', category: 'security', icon: 'fas fa-search' },
+            { id: 'http-headers', title: 'HTTP Headers Checker', description: 'Check HTTP headers', category: 'security', icon: 'fas fa-heading' },
+            { id: 'privacy-policy', title: 'Privacy Policy Generator', description: 'Generate privacy policies', category: 'security', icon: 'fas fa-file-contract' },
+            
+            // Social Media Tools (10)
+            { id: 'yt-thumbnail', title: 'YouTube Thumbnail Downloader', description: 'Download YouTube thumbnails', category: 'social', icon: 'fab fa-youtube' },
+            { id: 'ig-downloader', title: 'Instagram Downloader', description: 'Download Instagram photos', category: 'social', icon: 'fab fa-instagram' },
+            { id: 'twitter-downloader', title: 'Twitter Video Downloader', description: 'Download Twitter videos', category: 'social', icon: 'fab fa-twitter' },
+            { id: 'fb-downloader', title: 'Facebook Video Downloader', description: 'Download Facebook videos', category: 'social', icon: 'fab fa-facebook' },
+            { id: 'tiktok-downloader', title: 'TikTok Video Downloader', description: 'Download TikTok videos', category: 'social', icon: 'fab fa-tiktok' },
+            { id: 'yt-tags', title: 'YouTube Tags Extractor', description: 'Extract tags from YouTube videos', category: 'social', icon: 'fas fa-tags' },
+            { id: 'hashtag-gen', title: 'Hashtag Generator', description: 'Generate hashtags for content', category: 'social', icon: 'fas fa-hashtag' },
+            { id: 'social-post-gen', title: 'Social Media Post Generator', description: 'Create engaging social posts', category: 'social', icon: 'fas fa-comment-alt' },
+            { id: 'emoji-keyboard', title: 'Emoji Keyboard', description: 'Copy and paste emojis', category: 'social', icon: 'fas fa-smile' },
+            { id: 'twitter-counter', title: 'Twitter Character Counter', description: 'Count characters for tweets', category: 'social', icon: 'fab fa-twitter' },
+            
+            // Miscellaneous Tools (10)
+            { id: 'barcode-gen', title: 'Barcode Generator', description: 'Create custom barcodes', category: 'misc', icon: 'fas fa-barcode' },
+            { id: 'meme-gen', title: 'Meme Generator', description: 'Create custom memes', category: 'misc', icon: 'fas fa-laugh-squint' },
+            { id: 'resume-builder', title: 'Resume Builder', description: 'Create professional resumes', category: 'misc', icon: 'fas fa-file-alt' },
+            { id: 'invoice-gen', title: 'Invoice Generator', description: 'Create business invoices', category: 'misc', icon: 'fas fa-file-invoice' },
+            { id: 'business-name', title: 'Business Name Generator', description: 'Generate business name ideas', category: 'misc', icon: 'fas fa-sign' },
+            { id: 'lottery-gen', title: 'Lottery Number Generator', description: 'Generate lottery numbers', category: 'misc', icon: 'fas fa-ticket-alt' },
+            { id: 'coin-flip', title: 'Flip a Coin', description: 'Virtual coin flipping', category: 'misc', icon: 'fas fa-coins' },
+            { id: 'random-number', title: 'Random Number Generator', description: 'Generate random numbers', category: 'misc', icon: 'fas fa-dice' },
+            { id: 'dice-roller', title: 'Dice Roller', description: 'Roll virtual dice', category: 'misc', icon: 'fas fa-dice-five' },
+            { id: 'speed-test', title: 'Internet Speed Test', description: 'Test your internet speed', category: 'misc', icon: 'fas fa-wifi' },
+            
+            // Convert Tools (7)
+            { id: 'word-to-pdf', title: 'Word to PDF Converter', description: 'Convert Word documents to PDF', category: 'convert', icon: 'fas fa-file-word' },
+            { id: 'pdf-to-word', title: 'PDF to Word Converter', description: 'Convert PDF to Word documents', category: 'convert', icon: 'fas fa-file-word' },
+            { id: 'image-to-pdf', title: 'Image to PDF Converter', description: 'Convert images to PDF', category: 'convert', icon: 'fas fa-file-pdf' },
+            { id: 'pdf-to-ppt', title: 'PDF to PowerPoint', description: 'Convert PDF to PowerPoint', category: 'convert', icon: 'fas fa-file-powerpoint' },
+            { id: 'ppt-to-pdf', title: 'PPT to PDF Converter', description: 'Convert PowerPoint to PDF', category: 'convert', icon: 'fas fa-file-pdf' },
+            { id: 'word-to-ppt', title: 'Word to PowerPoint', description: 'Convert Word to PowerPoint', category: 'convert', icon: 'fas fa-file-powerpoint' },
+            { id: 'ppt-to-word', title: 'PPT to Word Converter', description: 'Convert PowerPoint to Word', category: 'convert', icon: 'fas fa-file-word' }
         ];
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             const toolsGrid = document.getElementById('tools-grid');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('search-input');
             
             // Create tool cards
-            tools.forEach(tool => {
-                const card = document.createElement('div');
-                card.className = 'tool-card';
-                card.innerHTML = `
-                    <div class="tool-icon">${tool.icon}</div>
-                    <h3>${tool.title}</h3>
-                    <p>${tool.description}</p>
-                    <button class="btn">Open Tool</button>
-                `;
-                card.addEventListener('click', () => openToolModal(tool));
-                toolsGrid.appendChild(card);
+            function renderTools(category = 'all', searchTerm = '') {
+                toolsGrid.innerHTML = '';
+                
+                const filteredTools = tools.filter(tool => {
+                    const matchesCategory = category === 'all' || tool.category === category;
+                    const matchesSearch = searchTerm === '' || 
+                        tool.title.toLowerCase().includes(searchTerm) || 
+                        tool.description.toLowerCase().includes(searchTerm);
+                    return matchesCategory && matchesSearch;
+                });
+                
+                if (filteredTools.length === 0) {
+                    toolsGrid.innerHTML = `<div class="no-results">
+                        <i class="fas fa-search" style="font-size: 4rem; margin-bottom: 1.5rem; color: var(--accent-color);"></i>
+                        <h3>No tools found</h3>
+                        <p>Try a different search term or category</p>
+                    </div>`;
+                    return;
+                }
+                
+                filteredTools.forEach(tool => {
+                    const card = document.createElement('div');
+                    card.className = 'tool-card';
+                    card.innerHTML = `
+                        <div class="tool-icon">${tool.icon}</div>
+                        <span class="category-tag">${categories[tool.category].name}</span>
+                        <h3>${tool.title}</h3>
+                        <p>${tool.description}</p>
+                        <button class="btn">Open Tool</button>
+                    `;
+                    card.addEventListener('click', () => openToolModal(tool));
+                    toolsGrid.appendChild(card);
+                });
+            }
+            
+            // Initial render
+            renderTools();
+            
+            // Category filter
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderTools(button.dataset.category, searchInput.value.toLowerCase());
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+                renderTools(activeCategory, searchInput.value.toLowerCase());
             });
             
             // Setup modal functionality
@@ -1077,9 +820,23 @@
             const toolContainer = document.getElementById('tool-container');
             
             function openToolModal(tool) {
-                toolContainer.innerHTML = tool.content;
+                // For demo purposes, we'll show a generic modal
+                // In a real implementation, each tool would have custom content
+                toolContainer.innerHTML = `
+                    <h2 class="tool-title">${tool.title}</h2>
+                    <div class="tool-content">
+                        <p>This is a premium tool for: <strong>${tool.description}</strong></p>
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter input for ${tool.title}">
+                        </div>
+                        <button>Process</button>
+                        <div class="result-box">
+                            <p class="result-text">Results will appear here</p>
+                        </div>
+                        <p class="premium-note"><i class="fas fa-crown" style="color: var(--accent-color);"></i> Premium processing - 100% client-side security</p>
+                    </div>
+                `;
                 modal.style.display = 'block';
-                tool.init();
             }
             
             closeBtn.addEventListener('click', () => {
